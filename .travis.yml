@@ -1,0 +1,20 @@
+os:
+  - linux
+sudo : false
+addons:
+  apt:
+   sources:
+    - ubuntu-toolchain-r-rest
+   packages:
+    - libstdc++
+    - fonts-droid-fallback
+before script:
+  - git clone https://github.com/flutter/flutter.git -b beta
+  - ./flutter/bin/flutter doctor
+script:
+  - ./flutter/bin/flutter test
+cache:
+  directories:
+    - $HOME/ .pub-cache        
+
+
