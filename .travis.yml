@@ -1,24 +1,14 @@
-os:
-  - linux
-sudo : false
+language: dart
+dist: xenial
 addons:
   apt:
-   sources:
-    - ubuntu-toolchain-r-rest
-   packages:
-    - libstdc++
-    - fonts-droid-fallback
-before_install:
-  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - sudo apt-get -q update
-  - sudo apt-get -y install gcc-4.8
-before script:
-  - git clone https://github.com/flutter/flutter.git -b beta
+    packages:
+      - lib32stdc++6
+install:
+  - git clone https://github.com/flutter/flutter.git -b stable
   - ./flutter/bin/flutter doctor
 script:
   - ./flutter/bin/flutter test
 cache:
   directories:
-    - $HOME/ .pub-cache        
-
-
+    - $HOME/.pub-cache
