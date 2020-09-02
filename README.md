@@ -72,6 +72,3 @@ To run the program, follow the steps given below:
 ## Built with :blue_heart: 
 <ul>
   <li><a href=https://flutter.dev/>Flutter </a> </li>
-
-
-
