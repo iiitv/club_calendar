@@ -1,4 +1,5 @@
-<h1 align="center"> Club Calendar </h1> <br>
+<h1 align="center"> Club Calendar </h1><br>
+
 <p align="center">
   <a href="Club Calender">
     <img alt="Club Calender" title="GitPoint" src="https://github.com/iiitv/club_calender/blob/master/assets/icons/CC-Logo%20(1).png" width="170">
@@ -11,9 +12,10 @@
   </a>
   </p>
 
-<hr style="height:0.5px;border-width:0;color:gray;background-color:gray">
 
+<h4 align='center'>
 A customized calendar app for club events and announcements.
+</h4>
 
 
 ## Prerequisites
@@ -32,12 +34,9 @@ A customized calendar app for club events and announcements.
 
 ## Setting up the Environment :computer:
 <ol>
-  <li>Install the latest version of flutter in your machine :v:</li>
-  
-https://flutter.dev/docs/get-started/install
-<li>Install firebase CLI </li>
+  <li>Install the latest version of <a href=https://flutter.dev/docs/get-started/install>Flutter</a> in your machine :v:</li>
+<li>Install <a href=  https://firebase.google.com/docs/cli>Firebase CLI</a>    </li>
 
-  https://firebase.google.com/docs/cli
   <li>Make sure you have emulator in your machine or debugging settings are enabled on your physical device.</li></ol>
   
   ```
@@ -72,3 +71,14 @@ To run the program, follow the steps given below:
 ## Built with :blue_heart: 
 <ul>
   <li><a href=https://flutter.dev/>Flutter </a> </li>
+</ul>
+
+## Contributing :raising_hand:
+Go through the [Wiki](https://github.com/iiitv/club_calender/wiki) to get an idea of the project before contributing to it.
+  
+</ul>
+
+<h1 align='center'>
+<p align='center'>Made With ❤ By IIITV Coding Club</p>
+</h1>
+
