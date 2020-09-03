@@ -76,9 +76,9 @@ To run the program, follow the steps given below:
 ## Contributing :raising_hand:
 Go through the [Wiki](https://github.com/iiitv/club_calender/wiki) to get an idea of the project before contributing to it.
   
-</ul>
+<br>  
 
-<h1 align='center'>
-<p align='center'>Made With ❤ By IIITV Coding Club</p>
-</h1>
+***
+
+<h5 align="center">Made With ❤ By IIITV Coding Club</h5>
 
