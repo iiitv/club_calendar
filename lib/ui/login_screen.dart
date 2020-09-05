@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import './homePage(temporary).dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,6 +17,43 @@ List<Color> colorList = [
 ];
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isLoggedIn = false;
+  GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+    ],
+  );
+  login() async {
+    try {
+      await _googleSignIn.signIn();
+      setState(() {
+        isLoggedIn = true;
+      });
+      if (isLoggedIn == true) {
+        print("Hey there,${_googleSignIn.currentUser.displayName}");
+
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => MyHomePage(
+            _googleSignIn.currentUser.displayName,
+          ),
+        ));
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  logout() async {
+    try {
+      await _googleSignIn.signOut();
+      setState(() {
+        isLoggedIn = false;
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height,
@@ -53,7 +93,9 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    login();
+                  },
                   child: Container(
                     height: deviceHeight * 0.0675852,
                     width: deviceWidth * 0.8,
