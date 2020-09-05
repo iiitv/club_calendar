@@ -1,6 +1,8 @@
 //this is temporary homepage till the th erequired homepage is made.
 //this is made for the checking whether the login page is siigning correctly
+import 'package:club_calendar/util/google_sign_in.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
   final String title = "hello";
@@ -24,7 +26,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void showSnackBar() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
-      content: Text("Welcome, ${widget.name.substring(9)}",style:TextStyle(color: Colors.white,fontSize: MediaQuery.of(context).size.width*0.046),),
+      content: Text(
+        "Welcome, ${widget.name.substring(9)}",
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: MediaQuery.of(context).size.width * 0.046),
+      ),
       backgroundColor: Colors.deepPurpleAccent,
       elevation: 30,
     ));
@@ -41,7 +48,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text(widget.title),
+        leading: Center(child: Text(widget.title,style: GoogleFonts.assistant(color: Colors.white,fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.height*0.030),)),
+        actions: [
+          FlatButton(
+              child: Text('Sign Out',style: GoogleFonts.assistant(color: Colors.white,fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.height*0.035),),
+              onPressed: () {
+                var googleSignMe =
+                    GoogleSignMeIn(whatToDo: 0, context: context);
+                googleSignMe.check();
+              },
+              ),
+        ],
       ),
       body: Center(
         child: Column(
