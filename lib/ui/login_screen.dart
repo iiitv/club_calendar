@@ -1,7 +1,10 @@
+import 'package:club_calendar/util/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
 class LoginScreen extends StatefulWidget {
+  static const routeName = "/loginScreen";
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -14,6 +17,8 @@ List<Color> colorList = [
 ];
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isLoggedIn = false;
+
   @override
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height,
@@ -53,7 +58,11 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    var googleSignMe =
+                        GoogleSignMeIn(whatToDo: 1, context: context);
+                    googleSignMe.check();
+                  },
                   child: Container(
                     height: deviceHeight * 0.0675852,
                     width: deviceWidth * 0.8,
