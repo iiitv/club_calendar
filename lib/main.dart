@@ -1,8 +1,11 @@
+import 'package:club_calendar/util/crashlytics_handler.dart';
 import 'package:flutter/material.dart';
 
+import './util/crashlytics_handler.dart';
 import './ui/login_screen.dart';
 
 void main() {
+  FireBaseCrashLytics.initialize();
   runApp(MyApp());
 }
 
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: LoginScreen(),
       routes: {
-        LoginScreen.routeName:(context)=>LoginScreen(),
+        LoginScreen.routeName: (context) => LoginScreen(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
