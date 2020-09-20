@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import './util/crashlytics_handler.dart';
 import './ui/login_screen.dart';
 
 void main() {
+  FirebaseCrashlytics.initialize();
   runApp(MyApp());
 }
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: LoginScreen(),
       routes: {
-        LoginScreen.routeName:(context)=>LoginScreen(),
+        LoginScreen.routeName: (context) => LoginScreen(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
