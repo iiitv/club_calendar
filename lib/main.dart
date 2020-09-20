@@ -4,7 +4,7 @@ import './util/crashlytics_handler.dart';
 import './ui/login_screen.dart';
 
 void main() {
-  FireBaseCrashLytics.initialize();
+  FirebaseCrashlytics.initialize();
   runApp(MyApp());
 }
 
