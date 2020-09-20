@@ -7,3 +7,4 @@ class FirebaseCrashlytics {
     FlutterError.onError = Crashlytics.instance.recordFlutterError;//to record any flutter error
   }
 }
+
