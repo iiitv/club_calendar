@@ -33,6 +33,7 @@ dependencies:
   firebase_messaging: ^7.0.0
   google_fonts: ^1.1.0
   google_sign_in: ^4.5.3
+  firebase_crashlytics: ^0.1.4+1
 
 dev_dependencies:
   flutter_test:

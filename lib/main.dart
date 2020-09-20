@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import './util/cloud_messaging_handler.dart';
+import './util/crashlytics_handler.dart';
 import './ui/login_screen.dart';
 
 void main() {
+  FirebaseCrashlytics.initialize();
   runApp(MyApp());
 }
 
