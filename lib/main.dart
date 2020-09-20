@@ -7,7 +7,7 @@ import './ui/login_screen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   FirebaseCrashlytics.initialize();
-  CloudMessaging.cloudMessanger();
+  CloudMessaging.cloudMessaging();
   runApp(MyApp());
 }
 
