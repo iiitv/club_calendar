@@ -1,4 +1,3 @@
-import 'package:club_calendar/util/crashlytics_handler.dart';
 import 'package:flutter/material.dart';
 
 import './util/crashlytics_handler.dart';
