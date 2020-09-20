@@ -5,23 +5,13 @@ import './util/crashlytics_handler.dart';
 import './ui/login_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   FirebaseCrashlytics.initialize();
+  CloudMessaging.cloudMessanger();
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  // This widget is the root of your application.
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    super.initState();
-    CloudMessanger.cloudMessanger();
-  }
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
