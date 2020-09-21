@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MyHomePage extends StatefulWidget {
   final String title = "hello";
   final String name;
-  MyHomePage(this.name);
+  MyHomePage([this.name]);
   static const routeName = '/homepage';
 
   @override
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void showSnackBar() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text(
-        "Welcome, ${widget.name.substring(9)}",
+       (widget.name!=null)? "Welcome, ${widget.name.substring(9)}":"Welcome Back!",
         style: TextStyle(
             color: Colors.white,
             fontSize: MediaQuery.of(context).size.width * 0.046),

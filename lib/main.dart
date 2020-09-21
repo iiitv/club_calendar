@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+import './ui/homePage(temporary).dart';
 import './util/cloud_messaging_handler.dart';
 import './util/crashlytics_handler.dart';
 import './ui/login_screen.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  FirebaseCrashlytics.initialize();
+  // FirebaseCrashlytics.initialize();
   CloudMessaging.cloudMessaging();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -16,7 +20,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: StreamBuilder<User>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.active) {
+              if (snapshot.data == null) {
+                return LoginScreen();
+              }
+            }
+            // print(snapshot.data.displayName);
+            return MyHomePage();
+            // return Container();
+          }),
       routes: {
         LoginScreen.routeName: (context) => LoginScreen(),
       },
