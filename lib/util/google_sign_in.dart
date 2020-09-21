@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../ui/homePage(temporary).dart';
-import '../ui/login_screen.dart';
-
 class GoogleSignMeIn {
   int whatToDo;
   String name;
@@ -33,11 +30,6 @@ class GoogleSignMeIn {
       this.name = _googleSignIn.currentUser.displayName;
       print("Hey there,$name");
       print(user);
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyHomePage(name),
-          ));
       return user;
     } catch (e) {
       print(e);
@@ -52,10 +44,7 @@ class GoogleSignMeIn {
   Future<User> logout() async {
     try {
       await _googleSignIn.signOut();
-      // this.name = _googleSignIn.currentUser.displayName;
-      // print("Bye, $name");
       await FirebaseAuth.instance.signOut();
-      Navigator.of(context).popAndPushNamed(LoginScreen.routeName);
     } catch (e) {
       print(e);
     }

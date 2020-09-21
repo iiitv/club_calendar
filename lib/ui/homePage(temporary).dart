@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MyHomePage extends StatefulWidget {
   final String title = "hello";
   final String name;
-  MyHomePage([this.name]);
+  MyHomePage(this.name);
   static const routeName = '/homepage';
 
   @override
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void showSnackBar() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text(
-       (widget.name!=null)? "Welcome, ${widget.name.substring(9)}":"Welcome Back!",
+        "Welcome, ${widget.name.substring(9)}",
         style: TextStyle(
             color: Colors.white,
             fontSize: MediaQuery.of(context).size.width * 0.046),
@@ -48,16 +48,28 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        leading: Center(child: Text(widget.title,style: GoogleFonts.assistant(color: Colors.white,fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.height*0.030),)),
+        leading: Center(
+            child: Text(
+          widget.title,
+          style: GoogleFonts.assistant(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: MediaQuery.of(context).size.height * 0.030),
+        )),
         actions: [
           FlatButton(
-              child: Text('Sign Out',style: GoogleFonts.assistant(color: Colors.white,fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.height*0.035),),
-              onPressed: () {
-                var googleSignMe =
-                    GoogleSignMeIn(whatToDo: 0, context: context);
-                googleSignMe.check();
-              },
-              ),
+            child: Text(
+              'Sign Out',
+              style: GoogleFonts.assistant(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.height * 0.035),
+            ),
+            onPressed: () {
+              var googleSignMe = GoogleSignMeIn(whatToDo: 0, context: context);
+              googleSignMe.check();
+            },
+          ),
         ],
       ),
       body: Center(

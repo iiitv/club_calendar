@@ -25,12 +25,10 @@ class MyApp extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.active) {
               if (snapshot.hasData) {
-                return MyHomePage();
-              } 
+                return MyHomePage(snapshot.data.displayName);
+              }
             }
             return LoginScreen();
-            // print(snapshot.data.displayName);
-            // return Container();
           }),
       routes: {
         LoginScreen.routeName: (context) => LoginScreen(),
