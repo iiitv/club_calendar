@@ -36,9 +36,7 @@ class GoogleSignMeIn {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => MyHomePage(
-              name
-            ),
+            builder: (context) => MyHomePage(name),
           ));
       return user;
     } catch (e) {
@@ -56,6 +54,7 @@ class GoogleSignMeIn {
       await _googleSignIn.signOut();
       // this.name = _googleSignIn.currentUser.displayName;
       // print("Bye, $name");
+      await FirebaseAuth.instance.signOut();
       Navigator.of(context).popAndPushNamed(LoginScreen.routeName);
     } catch (e) {
       print(e);

@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.active) {
-              if (snapshot.data == null) {
-                return LoginScreen();
-              }
+              if (snapshot.hasData) {
+                return MyHomePage();
+              } 
             }
+            return LoginScreen();
             // print(snapshot.data.displayName);
-            return MyHomePage();
             // return Container();
           }),
       routes: {
