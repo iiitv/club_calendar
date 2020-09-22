@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
             WavyHeader(),
             Container(
               child: Image.asset(
-                "assets/icons/CC-Logo (1).png",
+                "assets/icons/CC-Logo(1).png",
               ),
               height: deviceHeight * 0.1517,
             ),
