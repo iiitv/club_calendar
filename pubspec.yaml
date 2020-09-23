@@ -45,7 +45,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 flutter_icons:
   #  image_path: "assets/images/icon-128x128.png"
-    image_path: "assets/icons/CC-Logo (1).png"
+    image_path: "assets/icons/CC-Logo(1).png"
     android: true # can specify file name here e.g. "ic_launcher"
     ios: true # can specify file name here e.g. "My-Launcher-Icon"
     adaptive_icon_background: 0xffcc8899
