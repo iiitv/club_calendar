@@ -1,20 +1,14 @@
-import 'package:club_calendar/util/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../styles.dart';
+import '../util/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = "/loginScreen";
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
-
-List<Color> colorList = [
-  Colors.purple[300],
-  Color.fromRGBO(131, 58, 199, 1),
-  Color.fromRGBO(98, 63, 215, 1),
-  Color.fromRGBO(98, 63, 215, 1),
-];
 
 class _LoginScreenState extends State<LoginScreen> {
   bool isLoggedIn = false;
@@ -24,17 +18,26 @@ class _LoginScreenState extends State<LoginScreen> {
     double deviceHeight = MediaQuery.of(context).size.height,
         deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(34, 38, 76, 1),
+      backgroundColor: Styles.backgroundColor,
       body: Container(
         height: deviceHeight * 0.91,
         child: Column(
           children: [
-            WavyHeader(),
+            Stack(
+              children: [
+                WavyHeader(
+                  color: Color(0xff575757),
+                ), //dimgray
+                WavyHeader(
+                  color: Color(0xff434343),
+                ), //darkslategray
+              ],
+            ),
             Container(
               child: Image.asset(
                 "assets/icons/CC-Logo(1).png",
               ),
-              height: deviceHeight * 0.1517,
+              height: deviceHeight * 0.2317,
             ),
             SizedBox(
               height: deviceHeight * 0.058681,
@@ -42,12 +45,12 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               padding: EdgeInsets.all(8),
               child: Text(
-                "Welcome to Your Club Calender!",
+                "CLUB CALENDER",
                 // softWrap: true,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.ubuntu(
-                    color: Colors.white,
-                    fontSize: deviceHeight * 0.039511,
+                    color: Styles.buttonColor,
+                    fontSize: deviceHeight * 0.045511,
                     fontWeight: FontWeight.w500),
               ),
             ),
@@ -57,24 +60,21 @@ class _LoginScreenState extends State<LoginScreen> {
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: InkWell(
-                  onTap: () {
+                child: RaisedButton(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(deviceHeight * 0.03634),
+                    // side: BorderSide(color: Colors.red)
+                  ),
+                  color: Styles.backgroundColor,
+                  onPressed: () {
                     var googleSignMe =
                         GoogleSignMeIn(whatToDo: 1, context: context);
                     googleSignMe.check();
                   },
                   child: Container(
-                    height: deviceHeight * 0.0675852,
-                    width: deviceWidth * 0.8,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        colors: colorList,
-                        end: Alignment.topRight,
-                      ),
-                      borderRadius:
-                          BorderRadius.circular(deviceHeight * 0.02634),
-                    ),
+                    height: deviceHeight * 0.07675852,
+                    width: deviceWidth * 0.76,
                     child: Row(
                       children: [
                         Container(
@@ -84,13 +84,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             fit: BoxFit.fitHeight,
                           ),
                         ),
-                        Expanded(
+                        Flexible(
                           child: Text(
-                            " Sign In with Google",
-                            style: GoogleFonts.roboto(
-                              color: Colors.white,
-                              fontSize: deviceHeight * 0.02711292,
-                            ),
+                            " Log in with Google",
+                            style: GoogleFonts.montserrat(
+                                fontSize: 24,
+                                color: Styles.buttonColor,
+                                fontWeight: FontWeight.w400),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -108,18 +108,21 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 
 class WavyHeader extends StatelessWidget {
+  final Color color;
+  WavyHeader({@required this.color});
   @override
   Widget build(BuildContext context) {
     return ClipPath(
       child: Container(
+        color: color,
         height: MediaQuery.of(context).size.height * 0.223898,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            colors: colorList,
-            end: Alignment.topRight,
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.bottomLeft,
+        //     // colors: colorList,
+        //     end: Alignment.topRight,
+        //   ),
+        // ),
       ),
       clipper: BottomWave(MediaQuery.of(context).size.height,
           MediaQuery.of(context).size.height),
