@@ -13,7 +13,7 @@ class GoogleSignMeIn {
   );
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<User> login() async {
+  Future<void> login() async {
     try {
       GoogleSignInAccount _googleSignInAccount = await _googleSignIn.signIn();
       GoogleSignInAuthentication _googleAuthentication =
@@ -40,7 +40,7 @@ class GoogleSignMeIn {
     return ' ';
   }
 
-  Future<User> logout() async {
+  Future<void> logout() async {
     try {
       await _googleSignIn.signOut();
       await FirebaseAuth.instance.signOut();
