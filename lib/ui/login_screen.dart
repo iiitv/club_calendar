@@ -16,43 +16,60 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height,
-        deviceWidth = MediaQuery.of(context).size.width;
+        deviceWidth = MediaQuery.of(context).size.width,aspectRatio=MediaQuery.of(context).size.aspectRatio;
     return Scaffold(
       backgroundColor: Styles.backgroundColor,
       body: Container(
-        height: deviceHeight * 0.91,
+        height: deviceHeight * 0.87,
         child: Column(
           children: [
             Stack(
+              overflow: Overflow.visible,
               children: [
-                WavyHeader(
-                  color: Color(0xff575757),
-                ), //dimgray
-                WavyHeader(
-                  color: Color(0xff434343),
-                ), //darkslategray
+                Image.asset(
+                  'assets/icons/Vector1.png',
+                  fit: BoxFit.fill,
+                  scale: 0.3,
+                ),
+                Image.asset(
+                  'assets/icons/Vector2.png',
+                  fit: BoxFit.fill,
+                  scale: 0.2,
+                  // ),
+                ),
+                Positioned(
+                  top: deviceHeight * 0.178034,
+                  left: deviceWidth * 0.0541171296,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        "assets/icons/CC-Logo(1).png",
+                        scale: 1.6,
+                      ),
+                      SizedBox(
+                        height: deviceHeight * 0.038681,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: deviceHeight * 0.0094017,
+                            vertical: deviceWidth * 0.02037037),
+                        child: Text(
+                          "CLUB CALENDER",
+                          // softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.montserrat(
+                              color: Styles.buttonColor,
+                              fontSize:
+                                   aspectRatio*
+                                     75,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
-            ),
-            Container(
-              child: Image.asset(
-                "assets/icons/CC-Logo(1).png",
-              ),
-              height: deviceHeight * 0.2317,
-            ),
-            SizedBox(
-              height: deviceHeight * 0.058681,
-            ),
-            Container(
-              padding: EdgeInsets.all(8),
-              child: Text(
-                "CLUB CALENDER",
-                // softWrap: true,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.ubuntu(
-                    color: Styles.buttonColor,
-                    fontSize: deviceHeight * 0.045511,
-                    fontWeight: FontWeight.w500),
-              ),
             ),
             SizedBox(
               height: deviceHeight * 0.052681,
@@ -61,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: RaisedButton(
-                  elevation: 5,
+                  elevation: 7,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(deviceHeight * 0.03634),
                     // side: BorderSide(color: Colors.red)
@@ -82,13 +99,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Image.asset(
                             "assets/icons/google_bg.png",
                             fit: BoxFit.fitHeight,
+                            scale: 1.5,
                           ),
                         ),
                         Flexible(
                           child: Text(
                             " Log in with Google",
                             style: GoogleFonts.montserrat(
-                                fontSize: 24,
+                                fontSize: aspectRatio * 45,
                                 color: Styles.buttonColor,
                                 fontWeight: FontWeight.w400),
                             textAlign: TextAlign.center,
@@ -104,59 +122,5 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
-  }
-}
-
-class WavyHeader extends StatelessWidget {
-  final Color color;
-  WavyHeader({@required this.color});
-  @override
-  Widget build(BuildContext context) {
-    return ClipPath(
-      child: Container(
-        color: color,
-        height: MediaQuery.of(context).size.height * 0.223898,
-        // decoration: BoxDecoration(
-        //   gradient: LinearGradient(
-        //     begin: Alignment.bottomLeft,
-        //     // colors: colorList,
-        //     end: Alignment.topRight,
-        //   ),
-        // ),
-      ),
-      clipper: BottomWave(MediaQuery.of(context).size.height,
-          MediaQuery.of(context).size.height),
-    );
-  }
-}
-
-class BottomWave extends CustomClipper<Path> {
-  double deviceHeight, deviceWidth;
-  BottomWave(this.deviceHeight, this.deviceWidth);
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0.0, size.height - deviceHeight * 0.02634);
-
-    var secondControlPoint = Offset(size.width / 4, size.height);
-    var secondEndPoint =
-        Offset(size.width / 2.25, size.height - deviceHeight * 0.046096);
-    path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
-        secondEndPoint.dx, secondEndPoint.dy);
-
-    var firstControlPoint = Offset(
-        size.width - (size.width / 3.25), size.height - deviceHeight * 0.12775);
-    var firstEndPoint =
-        Offset(size.width, size.height - deviceHeight * 0.10536);
-    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
-        firstEndPoint.dx, firstEndPoint.dy);
-
-    path.lineTo(size.width, size.height - deviceHeight * 0.052681);
-    path.lineTo(size.width, 0.0);
-    path.close();
-
-    return path;
   }
 }
