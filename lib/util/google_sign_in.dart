@@ -3,10 +3,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class GoogleSignMeIn {
-  int whatToDo;
   String name;
   BuildContext context;
-  GoogleSignMeIn({@required this.whatToDo, @required this.context});
+  GoogleSignMeIn();
   GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: [
       'email',
@@ -47,14 +46,6 @@ class GoogleSignMeIn {
       await FirebaseAuth.instance.signOut();
     } catch (e) {
       print(e);
-    }
-  }
-
-  dynamic check() {
-    if (whatToDo == 1) {
-      login();
-    } else {
-      logout();
     }
   }
 }

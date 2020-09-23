@@ -60,8 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: InkWell(
                   onTap: () {
                     var googleSignMe =
-                        GoogleSignMeIn(whatToDo: 1, context: context);
-                    googleSignMe.check();
+                        GoogleSignMeIn();
+                    googleSignMe.login();
                   },
                   child: Container(
                     height: deviceHeight * 0.0675852,

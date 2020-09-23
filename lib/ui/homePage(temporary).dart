@@ -66,8 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: MediaQuery.of(context).size.height * 0.035),
             ),
             onPressed: () {
-              var googleSignMe = GoogleSignMeIn(whatToDo: 0, context: context);
-              googleSignMe.check();
+              var googleSignMe = GoogleSignMeIn();
+              googleSignMe.logout();
             },
           ),
         ],
