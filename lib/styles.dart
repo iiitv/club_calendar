@@ -8,7 +8,6 @@ class Styles {
   static const Color fontColor = Color(0xffE5E5E5);
   static const String googleImage = "assets/icons/google_bg.png";
   static const String logoImage = "assets/icons/CC-Logo(1).png";
-  
   Icon getIcon(IconData iconData, {colour= buttonColor,defaultSize=21}) {
     return Icon(
       iconData,
