@@ -86,8 +86,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Styles.backgroundColor,
                   onPressed: () {
                     var googleSignMe =
-                        GoogleSignMeIn(whatToDo: 1, context: context);
-                    googleSignMe.check();
+                        GoogleSignMeIn();
+                    googleSignMe.login();
                   },
                   child: Container(
                     height: deviceHeight * 0.07675852,
