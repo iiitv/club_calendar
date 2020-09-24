@@ -6,6 +6,7 @@ indent_style = space
 indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
+end_of_line = lf
 
 [*.{kt,kts}]
 indent_size = 4
@@ -13,6 +14,7 @@ max_line_length=off
 
 [*.dart]
 indent_brace_style = K&R
+max_line_length = 120
 
 [*.md]
 max_line_length = off
