@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 import './util/cloud_messaging_handler.dart';
 import './util/crashlytics_handler.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-    return MaterialApp(
+    return NeumorphicApp(
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(
         future: _initialization,
@@ -41,10 +42,6 @@ class MyApp extends StatelessWidget {
         LoginScreen.routeName: (context) => LoginScreen(),
       },
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
     );
   }
 }
