@@ -54,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Sign Out',style: GoogleFonts.assistant(color: Colors.white,fontWeight: FontWeight.bold,fontSize: MediaQuery.of(context).size.height*0.035),),
               onPressed: () {
                 var googleSignMe =
-                    GoogleSignMeIn(whatToDo: 0, context: context);
-                googleSignMe.check();
+                    GoogleSignMeIn();
+                googleSignMe.logout();
               },
               ),
         ],
