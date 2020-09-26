@@ -81,4 +81,3 @@ Go through the [Wiki](https://github.com/iiitv/club_calender/wiki) to get an ide
 ***
 
 <h5 align="center">Made With ❤ By IIITV Coding Club</h5>
-

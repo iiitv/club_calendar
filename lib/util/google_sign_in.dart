@@ -1,29 +1,33 @@
-import 'package:club_calendar/ui/login_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
-import '../ui/homePage(temporary).dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class GoogleSignMeIn {
-  int whatToDo;
   String name;
-  BuildContext context;
-  GoogleSignMeIn({@required this.whatToDo, @required this.context});
+  GoogleSignMeIn();
   GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: [
       'email',
     ],
   );
-  login() async {
+  FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> login() async {
     try {
-      await _googleSignIn.signIn();
+      GoogleSignInAccount _googleSignInAccount = await _googleSignIn.signIn();
+      GoogleSignInAuthentication _googleAuthentication =
+          await _googleSignInAccount.authentication;
+      GoogleAuthCredential credential = GoogleAuthProvider.credential(
+          idToken: _googleAuthentication.idToken,
+          accessToken: _googleAuthentication.accessToken);
+
+      final UserCredential authResult =
+          await _auth.signInWithCredential(credential);
+      final User user = authResult.user;
+
       this.name = _googleSignIn.currentUser.displayName;
       print("Hey there,$name");
-      Navigator.pushReplacement(context,MaterialPageRoute(
-        builder: (context) => MyHomePage(
-          name,
-        ),
-      ));
+      print(user);
+      return user;
     } catch (e) {
       print(e);
     }
@@ -34,22 +38,12 @@ class GoogleSignMeIn {
     return ' ';
   }
 
-  logout() async {
+  Future<void> logout() async {
     try {
       await _googleSignIn.signOut();
-      // this.name = _googleSignIn.currentUser.displayName;
-      // print("Bye, $name");
-      Navigator.of(context).popAndPushNamed(LoginScreen.routeName);
+      await FirebaseAuth.instance.signOut();
     } catch (e) {
       print(e);
-    }
-  }
-
-  dynamic check() {
-    if (whatToDo == 1) {
-      login();
-    } else {
-      logout();
     }
   }
 }
