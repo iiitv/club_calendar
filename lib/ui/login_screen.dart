@@ -1,7 +1,8 @@
-import 'package:club_calendar/util/google_sign_in.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 
+import '../styles.dart';
+import '../util/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = "/loginScreen";
@@ -9,72 +10,106 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-List<Color> colorList = [
-  Colors.purple[300],
-  Color.fromRGBO(131, 58, 199, 1),
-  Color.fromRGBO(98, 63, 215, 1),
-  Color.fromRGBO(98, 63, 215, 1),
-];
-
 class _LoginScreenState extends State<LoginScreen> {
-  bool isLoggedIn = false;
-
+  bool isPressed = false;
+  var styles = Styles();
   @override
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height,
         deviceWidth = MediaQuery.of(context).size.width;
+    print(deviceHeight);
+    print(deviceWidth);
     return Scaffold(
-      backgroundColor: Color.fromRGBO(34, 38, 76, 1),
+      backgroundColor: Styles.backgroundColor,
       body: Container(
-        height: deviceHeight * 0.91,
+        height: deviceHeight * 0.87,
         child: Column(
           children: [
-            WavyHeader(),
-            Container(
-              child: Image.asset(
-                "assets/icons/CC-Logo(1).png",
-              ),
-              height: deviceHeight * 0.1517,
-            ),
-            SizedBox(
-              height: deviceHeight * 0.058681,
-            ),
-            Container(
-              padding: EdgeInsets.all(8),
-              child: Text(
-                "Welcome to Your Club Calender!",
-                // softWrap: true,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.ubuntu(
-                    color: Colors.white,
-                    fontSize: deviceHeight * 0.039511,
-                    fontWeight: FontWeight.w500),
-              ),
+            Stack(
+              overflow: Overflow.visible,
+              children: [
+                Image.asset(
+                  'assets/icons/Vector1.png',
+                  fit: BoxFit.fill,
+                  scale: 0.4,
+                ),
+                Image.asset(
+                  'assets/icons/Vector2.png',
+                  fit: BoxFit.fill,
+                  scale: 0.4,
+                  // ),
+                ),
+                Positioned(
+                  top: deviceHeight * 0.176578034,
+                  left: deviceWidth * 0.045686541,
+                  right: deviceWidth * 0.012,
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        "assets/icons/CC-Logo(1).png",
+                        scale: 1.8,
+                      ),
+                      SizedBox(
+                        height: deviceHeight * 0.058681,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: deviceHeight * 0.0094017,
+                          vertical: deviceWidth * 0.02037037,
+                        ),
+                        child: Text(
+                          "CLUB CALENDAR",
+                          // softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: styles.customStyle(
+                              color: Styles.buttonColor, size: 35.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: deviceHeight * 0.052681,
             ),
             Expanded(
-              child: Align(
+              child: Container(
                 alignment: Alignment.bottomCenter,
-                child: InkWell(
-                  onTap: () {
-                    var googleSignMe =
-                        GoogleSignMeIn();
+                height: deviceHeight * 0.06399636,
+                width: deviceWidth * 0.79,
+                child: neu.NeumorphicButton(
+                  style: neu.NeumorphicStyle(
+                    lightSource: isPressed
+                        ? neu.LightSource.topLeft
+                        : neu.LightSource.top,
+                    shadowLightColorEmboss: Styles.backgroundColor,
+                    shadowLightColor: Styles.backgroundColor,
+                    boxShape: neu.NeumorphicBoxShape.roundRect(
+                      BorderRadius.circular(
+                          MediaQuery.of(context).size.height * 0.0387820513),
+                    ),
+                    color: !isPressed ? Styles.backgroundColor : Colors.black12,
+                    intensity: 1,
+                    shape: !isPressed
+                        ? neu.NeumorphicShape.flat
+                        : neu.NeumorphicShape.concave,
+                    depth: isPressed
+                        ? -4.9687
+                        : 4.9687, //MediaQuery.of(context).size.height*0.023,
+                    oppositeShadowLightSource: false,
+                  ),
+                  onPressed: () {
+                    var googleSignMe = GoogleSignMeIn();
                     googleSignMe.login();
+                    setState(() {
+                      isPressed = true;
+                    });
                   },
                   child: Container(
-                    height: deviceHeight * 0.0675852,
-                    width: deviceWidth * 0.8,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        colors: colorList,
-                        end: Alignment.topRight,
-                      ),
-                      borderRadius:
-                          BorderRadius.circular(deviceHeight * 0.02634),
-                    ),
+                    height: deviceHeight * 0.06599636,
+                    width: deviceWidth * 0.76,
                     child: Row(
                       children: [
                         Container(
@@ -82,15 +117,15 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Image.asset(
                             "assets/icons/google_bg.png",
                             fit: BoxFit.fitHeight,
+                            scale: 7,
                           ),
                         ),
-                        Expanded(
+                        Flexible(
                           child: Text(
-                            " Sign In with Google",
-                            style: GoogleFonts.roboto(
-                              color: Colors.white,
-                              fontSize: deviceHeight * 0.02711292,
-                            ),
+                            " Log in with Google",
+                            style: styles.headingStyle(
+                                color: Styles.buttonColor,
+                                fontWeight: FontWeight.w400),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -104,56 +139,5 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
-  }
-}
-
-class WavyHeader extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ClipPath(
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.223898,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            colors: colorList,
-            end: Alignment.topRight,
-          ),
-        ),
-      ),
-      clipper: BottomWave(MediaQuery.of(context).size.height,
-          MediaQuery.of(context).size.height),
-    );
-  }
-}
-
-class BottomWave extends CustomClipper<Path> {
-  double deviceHeight, deviceWidth;
-  BottomWave(this.deviceHeight, this.deviceWidth);
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0.0, size.height - deviceHeight * 0.02634);
-
-    var secondControlPoint = Offset(size.width / 4, size.height);
-    var secondEndPoint =
-        Offset(size.width / 2.25, size.height - deviceHeight * 0.046096);
-    path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
-        secondEndPoint.dx, secondEndPoint.dy);
-
-    var firstControlPoint = Offset(
-        size.width - (size.width / 3.25), size.height - deviceHeight * 0.12775);
-    var firstEndPoint =
-        Offset(size.width, size.height - deviceHeight * 0.10536);
-    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
-        firstEndPoint.dx, firstEndPoint.dy);
-
-    path.lineTo(size.width, size.height - deviceHeight * 0.052681);
-    path.lineTo(size.width, 0.0);
-    path.close();
-
-    return path;
   }
 }
