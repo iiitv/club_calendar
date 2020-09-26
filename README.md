@@ -2,13 +2,13 @@
 
 <p align="center">
   <a href="Club Calender">
-    <img alt="Club Calender" title="GitPoint" src="https://github.com/iiitv/club_calender/blob/master/assets/icons/CC-Logo%20(1).png" width="170">
+    <img alt="Club Calender" title="GitPoint" src="https://github.com/iiitv/club_calender/blob/master/assets/icons/CC-Logo(1).png" width="170">
   </a>
 </p>
 
 <p align="center">
   <a href="https://travis-ci.org/<iiitv>/<club_calender>">
-    <img alt="Travis Build Status" title="Travis-CI Build Status" src="https://travis-ci.com/iiitv/club_calender.svg?branch=master" >
+    <img alt="Travis Build Status" title="Travis-CI Build Status" src="https://travis-ci.com/iiitv/club_calendar.svg?branch=master" >
   </a>
   </p>
 
