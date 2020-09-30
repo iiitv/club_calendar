@@ -8,9 +8,19 @@ class EventDetailsPage extends StatelessWidget {
   static const String routeName = '\EventDetailsScreen';
   final styles = Styles();
   final List<Map<String, dynamic>> _iconsInfo = [
-    {'iconData': Icons.calendar_today, 'info': '7 Sep', 'day': 'Monday'},
-    {'iconData': Icons.access_time, 'info': '30 days'},
-    {'iconData': Icons.location_on_outlined, 'info': 'LH1 Sabar Hostel'},
+    {
+      'iconData': Icons.calendar_today,
+      'info': '7 Sep',
+      'day': 'Monday',
+    },
+    {
+      'iconData': Icons.access_time,
+      'info': '30 days',
+    },
+    {
+      'iconData': Icons.location_on,
+      'info': 'LH1 Sabar Hostel',
+    },
   ];
   @override
   Widget build(BuildContext context) {
