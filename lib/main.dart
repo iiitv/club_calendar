@@ -7,6 +7,7 @@ import './util/cloud_messaging_handler.dart';
 import './util/crashlytics_handler.dart';
 import './ui/login_screen.dart';
 import './ui/homePage(temporary).dart';
+import 'ui/event_details.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         LoginScreen.routeName: (context) => LoginScreen(),
+        EventDetailsPage.routeName: (context)=>EventDetailsPage(),
       },
       title: 'Flutter Demo',
     );
