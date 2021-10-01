@@ -17,7 +17,12 @@ class MenuWidget extends StatefulWidget {
 class _MenuWidgetState extends State<MenuWidget> {
   @override
   Widget build(BuildContext context) {
+    bool isPressedEvent= false;
+    bool isPressedPastEvent= false;
+    bool isPressedFeedBack= false;
     bool isPressed= false;
+
+
     var styles = Styles();
     double deviceHeight = MediaQuery.of(context).size.height,
         deviceWidth = MediaQuery.of(context).size.width;
@@ -45,7 +50,7 @@ class _MenuWidgetState extends State<MenuWidget> {
             ),
 
 
-
+            //Switch
             Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 20,left: 10,right: 10),
               child: Container(
@@ -63,6 +68,10 @@ class _MenuWidgetState extends State<MenuWidget> {
                 ),
               ),
             ),
+
+
+            //Event
+
             Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 20,left: 10,right: 10),
               child: Container(
@@ -93,7 +102,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                   onPressed: () {
 
                     setState(() {
-                      isPressed = true;
+                      isPressedEvent = true;
                     });
                   },
                   child: Container(
@@ -123,6 +132,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                 ),
               ),
             ),
+
+            //Past Events
             Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 20,left: 10,right: 10),
               child: Container(
@@ -153,7 +164,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                   onPressed: () {
 
                     setState(() {
-                      isPressed = true;
+                      isPressedPastEvent = true;
                     });
                   },
                   child: Container(
@@ -169,7 +180,7 @@ class _MenuWidgetState extends State<MenuWidget> {
 
                           child: Center(
                             child: Text(
-                              "Events",
+                              "Past Events",
                               style: styles.headingStyle(
                                   color: Styles.buttonColor,
                                   fontWeight: FontWeight.w400),
@@ -183,6 +194,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                 ),
               ),
             ),
+
+            //Send Feedback
             Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 20,left: 10,right: 10),
               child: Container(
@@ -213,7 +226,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                   onPressed: () {
 
                     setState(() {
-                      isPressed = true;
+                      isPressedFeedBack = true;
                     });
                   },
                   child: Container(
@@ -229,7 +242,7 @@ class _MenuWidgetState extends State<MenuWidget> {
 
                           child: Center(
                             child: Text(
-                              "Events",
+                              "Send feedback",
                               style: styles.headingStyle(
                                   color: Styles.buttonColor,
                                   fontWeight: FontWeight.w400),
@@ -243,6 +256,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                 ),
               ),
             ),
+
+            //Signout Button
 
             Padding(
               padding: const EdgeInsets.all(20),
