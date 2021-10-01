@@ -1,0 +1,96 @@
+{
+  "project_info": {
+    "project_number": "1012587669993",
+    "firebase_url": "https://catalogue-f4fa9.firebaseio.com",
+    "project_id": "catalogue-f4fa9",
+    "storage_bucket": "catalogue-f4fa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012587669993:android:4fd37b7e4d7a6a3cc74378",
+        "android_client_info": {
+          "package_name": "com.iiitvadodara.club_calendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012587669993-1v9v7m7vg40ned749qc0t5tn396t323u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "03458753ac6f3585a07e36d6f944b2db754c7b06"
+          }
+        },
+        {
+          "client_id": "1012587669993-2s26ote9oudk9134n05v6bckq7q7veq9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "a882c3f8adbc716d200eb717ab6ffe28699070e7"
+          }
+        },
+        {
+          "client_id": "1012587669993-2t7h4q0dnaeprgb2u2mhql6h368tq6d1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "9665c6cec447b951c064df66460cf391feccad59"
+          }
+        },
+        {
+          "client_id": "1012587669993-2va5ol7ngs1l6d1sjji4bait77kdtuo6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "04c5143edc34c6cb143c7a13a90c49b75ab35e6c"
+          }
+        },
+        {
+          "client_id": "1012587669993-7qcu7q0islau1okju72ljkc7998dr8h6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "801fff0f078b43c4b50647cb4daf1bcb2f4edee0"
+          }
+        },
+        {
+          "client_id": "1012587669993-oq5hjb3n70oc0aiqjcf85cr6rndre6pb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "8a854614fb4f71fa7608d40c15168e1e7be9355e"
+          }
+        },
+        {
+          "client_id": "1012587669993-peb49ia8gg0h6igfuvd0pafs099haccc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "2fca51acf4fab53ebc1c765af8744dd704b3001a"
+          }
+        },
+        {
+          "client_id": "1012587669993-0fk95drobaebv6h41gui0kar3c2l95go.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGarRBEw-WrsOHjSFIUYC1no0nxdjLyuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012587669993-0fk95drobaebv6h41gui0kar3c2l95go.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

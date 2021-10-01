@@ -4,10 +4,11 @@ import 'package:club_calendar/util/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'MenuWidget.dart';
 import 'event_details.dart';
 
 class MyHomePage extends StatefulWidget {
-  final String title = "hello";
+  final String title = "CLUB CALENDAR";
   final String name;
   MyHomePage(this.name);
   static const routeName = '/homepage';
@@ -48,16 +49,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      backgroundColor: Colors.black,
       key: _scaffoldKey,
+
       appBar: AppBar(
-        leading: Center(
-            child: Text(
-          widget.title,
-          style: GoogleFonts.assistant(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.height * 0.030),
-        )),
+
+        automaticallyImplyLeading: false,
+        title: Builder(
+          builder: (context) => IconButton(
+              icon: Icon(Icons.menu),
+
+              onPressed: (){
+                Scaffold.of(context).openDrawer();
+              }
+
+          ),
+        ),
         actions: [
           FlatButton(
             child: Text(
@@ -65,17 +73,22 @@ class _MyHomePageState extends State<MyHomePage> {
               style: GoogleFonts.assistant(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: MediaQuery.of(context).size.height * 0.035),
+                  fontSize: MediaQuery.of(context).size.height * 0.025),
             ),
             onPressed: () {
               var googleSignMe = GoogleSignMeIn();
               googleSignMe.logout();
             },
           ),
+
+
         ],
       ),
+      drawer: MenuWidget(),
       body: Center(
+
         child: Column(
+
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
