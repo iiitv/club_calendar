@@ -85,18 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
            Container(
              child:
              
-          //   ElevatedButton(
-          //     onPressed: (){
-          //        _incrementCounter;
-          // Navigator.of(context).pushNamed(EventDetailsPage.routeName);
-          //     }, 
-          //   child: Text("Event Details"),
-            
-          //   style: ButtonStyle(
-          //     backgroundColor: MaterialStateProperty.all(Colors.purple[500]),
-          //   ),
-          //   )
-
               MaterialButton(
                 onPressed: (){
                   _incrementCounter;
