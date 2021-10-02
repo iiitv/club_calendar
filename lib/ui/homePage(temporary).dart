@@ -44,6 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => showSnackBar());
   }
+  AnimationController animationController;
+  Animation animation;
+  int currentState = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -78,24 +82,51 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+           Container(
+             child:
+             
+          //   ElevatedButton(
+          //     onPressed: (){
+          //        _incrementCounter;
+          // Navigator.of(context).pushNamed(EventDetailsPage.routeName);
+          //     }, 
+          //   child: Text("Event Details"),
+            
+          //   style: ButtonStyle(
+          //     backgroundColor: MaterialStateProperty.all(Colors.purple[500]),
+          //   ),
+          //   )
+
+              MaterialButton(
+                onPressed: (){
+                  _incrementCounter;
+          Navigator.of(context).pushNamed(EventDetailsPage.routeName);
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(padding:EdgeInsets.only(right: 10),
+                    child:
+                  Icon(Icons.category_outlined),
+                    ),
+                  Text("Event Details"),
+                ],),
+                padding: EdgeInsets.symmetric(horizontal: 15),                
+                height: 40,
+                elevation:10,
+                animationDuration: Duration(seconds: 2),
+                splashColor: Colors.black,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                color: Colors.blue[700],
+                textColor: Colors.white,
+                 )
+
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _incrementCounter;
-          Navigator.of(context).pushNamed(EventDetailsPage.routeName);
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+    
+      
     );
   }
 }
