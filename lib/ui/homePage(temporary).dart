@@ -17,14 +17,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   void showSnackBar() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
@@ -80,14 +73,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-           Container(
-             child:
-             
+          
               MaterialButton(
                 onPressed: (){
-                  _incrementCounter;
           Navigator.of(context).pushNamed(EventDetailsPage.routeName);
                 },
                 child: Row(
@@ -99,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   Text("Event Details"),
                 ],),
-                padding: EdgeInsets.symmetric(horizontal: 15),                
+                padding: EdgeInsets.symmetric(horizontal: 23),                
                 height: 40,
                 elevation:10,
                 animationDuration: Duration(seconds: 2),
@@ -107,9 +97,66 @@ class _MyHomePageState extends State<MyHomePage> {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 color: Colors.blue[700],
                 textColor: Colors.white,
-                 )
-
-            )
+                 ),
+              MaterialButton(
+                onPressed: (){},
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(padding:EdgeInsets.only(right: 10),
+                    child:
+                  Icon(Icons.description),
+                    ),
+                  Text("Event Page"),
+                ],),
+                padding: EdgeInsets.symmetric(horizontal: 29),                
+                height: 40,
+                elevation:10,
+                animationDuration: Duration(seconds: 2),
+                splashColor: Colors.black,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                color: Colors.blue[700],
+                textColor: Colors.white,
+                 ),
+              MaterialButton(
+                onPressed: (){},
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(padding:EdgeInsets.only(right: 10),
+                    child:
+                  Icon(Icons.feedback),
+                    ),
+                  Text("Feedback Page"),
+                ],),
+                padding: EdgeInsets.symmetric(horizontal: 16),                
+                height: 40,
+                elevation:10,
+                animationDuration: Duration(seconds: 2),
+                splashColor: Colors.black,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                color: Colors.blue[700],
+                textColor: Colors.white,
+                 ),
+              MaterialButton(
+                onPressed: (){},
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(padding:EdgeInsets.only(right: 5),
+                    child:
+                  Icon(Icons.date_range),
+                    ),
+                  Text("Past Event Page"),
+                ],),
+                height: 40,
+                elevation:10,
+                animationDuration: Duration(seconds: 2),
+                splashColor: Colors.black,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                color: Colors.blue[700],
+                textColor: Colors.white,
+                 ),
           ],
         ),
       ),
