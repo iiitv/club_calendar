@@ -57,6 +57,20 @@ class Styles {
         fontSize: 18, color: color, fontWeight: FontWeight.w400);
   }
 
+  TextStyle cardHeadingStyle({color = fontColor, fontWeight= FontWeight.w400}){
+    return GoogleFonts.montserrat(
+        fontSize: 25, color: color, fontWeight: fontWeight);
+  }
+
+  TextStyle cardDurationStyle({color = buttonColor, fontWeight= FontWeight.w400}){
+    return GoogleFonts.montserrat(
+        fontSize: 16, color: color, fontWeight: fontWeight);
+  }
+
+
+
+
+
   List<BoxShadow> shadowToContainer() {
     return [
       BoxShadow(
