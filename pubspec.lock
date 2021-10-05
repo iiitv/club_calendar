@@ -21,7 +21,9 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.5.0"
+
+    version: "2.6.1"
+
   boolean_selector:
     dependency: transitive
     description:
@@ -261,6 +263,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.3"
+
   lite_rolling_switch:
     dependency: "direct main"
     description:
@@ -268,6 +271,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1"
+
   matcher:
     dependency: transitive
     description:
@@ -288,7 +292,7 @@ packages:
       name: mockito
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.1"
+    version: "4.1.1+1"
   neumorphic:
     dependency: "direct main"
     description:
@@ -398,7 +402,10 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+
+
+    version: "1.8.1"
+
   stack_trace:
     dependency: transitive
     description:
@@ -433,7 +440,9 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.19"
+
+    version: "0.3.0"
+
   typed_data:
     dependency: transitive
     description:

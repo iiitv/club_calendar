@@ -21,7 +21,6 @@ class _MyHomePageState extends State<MyHomePage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
 
-
   void showSnackBar() {
     _scaffoldKey.currentState.showSnackBar(SnackBar(
       content: Text(
@@ -40,6 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => showSnackBar());
   }
+  AnimationController animationController;
+  Animation animation;
+  int currentState = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
       key: _scaffoldKey,
 
       appBar: AppBar(
+
         backgroundColor: Styles.backgroundColor,
         elevation: 0.0,
 
@@ -71,10 +75,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text("CLUB CALENDAR",
             style: styles.headingStyle(),)
+
+        
           ],
         ),
 
       ),
+
 
 
       drawer: MenuWidget(),
@@ -84,6 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
           child: EventList()
       ),
 
+
+
+    
+      
 
     );
   }
