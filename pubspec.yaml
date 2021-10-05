@@ -37,9 +37,12 @@ dependencies:
   firebase_auth: ^0.18.0+1
   firebase_core: ^0.5.0
   neumorphic: ^0.4.0
-  flutter_neumorphic: ^3.0.2
+  flutter_neumorphic: ^3.1.0
   firebase_auth_mocks: ^0.3.1
   sliding_sheet: ^0.4.0
+  lite_rolling_switch: ^0.1.1
+  flutter_switch: ^0.3.2
+  sliding_switch: ^1.0.0
 
 dev_dependencies:
   flutter_test:
