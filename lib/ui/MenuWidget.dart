@@ -68,7 +68,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                   width: deviceWidth * 0.8,
                   child: SlidingSwitch(
                     value: false,
-                    width: deviceWidth * 0.73, //check adaptability
+                    width: deviceWidth * 0.731, //check adaptability
                     onChanged: (bool value) {
                       print(value);
                     },
