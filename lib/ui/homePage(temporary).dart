@@ -53,11 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
       appBar: AppBar(
         backgroundColor: Styles.backgroundColor,
+        elevation: 0.0,
 
         automaticallyImplyLeading: false,
         title: Row(
           children: [
             Builder(
+
               builder: (context) => IconButton(
                   icon: Icon(Icons.menu),
 
