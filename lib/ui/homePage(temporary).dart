@@ -4,6 +4,7 @@ import 'package:club_calendar/styles.dart';
 import 'package:club_calendar/ui/event_list.dart';
 import 'package:flutter/material.dart';
 import 'MenuWidget.dart';
+import 'app_feedback.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -76,25 +77,20 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("CLUB CALENDAR",
             style: styles.headingStyle(),)
 
-        
+
           ],
         ),
 
       ),
 
-
-
       drawer: MenuWidget(),
 
-
-      body: SingleChildScrollView(
-          child: EventList()
-      ),
+      body:SingleChildScrollView(child: EventList())
 
 
 
-    
-      
+
+
 
     );
   }
