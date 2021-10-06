@@ -45,10 +45,7 @@ class AppFeedback extends StatelessWidget {
              scale:0.4
          ),
 
-
-
           //Column of experiences
-
 
           Padding(
             padding: const EdgeInsets.only(top:10,),
@@ -223,8 +220,7 @@ class AppFeedback extends StatelessWidget {
                      //Card
                     Container(
 
-                      width: deviceWidth*0.6,
-                      height: deviceHeight*0.16,
+
 
 
                       child: Neumorphic(
@@ -245,7 +241,13 @@ class AppFeedback extends StatelessWidget {
 
                                     child: Padding(
                                        padding: const EdgeInsets.all(8.0),
-                                           child: TextField(
+                                           child: AspectRatio(
+                                             aspectRatio:4,
+
+                                             child: TextFormField(
+                                               minLines: 1,
+                                          maxLines: 5,
+                                          keyboardType: TextInputType.multiline,
                                           style: TextStyle(
                                           color: Styles.fontColor
                                        ),
@@ -261,6 +263,7 @@ class AppFeedback extends StatelessWidget {
 
 
                                     ),
+                                           ),
                                     ),
                                 ),
                              ),
