@@ -52,18 +52,8 @@ class _AppFeedBackPageState extends State<AppFeedBackPage> {
           ),
 
         ),
-
-
-
         drawer: MenuWidget(),
-
-
         body:AppFeedback()
-
-
-
-
-
 
     );
 

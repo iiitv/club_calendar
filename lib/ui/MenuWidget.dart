@@ -40,9 +40,9 @@ class _MenuWidgetState extends State<MenuWidget> {
         child:Container(
 
 
-        width: deviceWidth,
-        color: Styles.backgroundColor,
-        child: Container(
+         width: deviceWidth,
+         color: Styles.backgroundColor,
+         child: Container(
           height: deviceHeight,
 
           child: ListView(

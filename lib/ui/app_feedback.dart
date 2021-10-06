@@ -16,10 +16,14 @@ class AppFeedback extends StatelessWidget {
         deviceWidth = MediaQuery.of(context).size.width;
 
     Styles styles = new Styles();
+    //***************************************************************************************
+
     return SingleChildScrollView(
       child: Column(
 
         children: [
+
+          //Initial Text
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -33,6 +37,8 @@ class AppFeedback extends StatelessWidget {
             ),
           ),
 
+
+          //Image
           Image.asset(
              "assets/icons/phone_feedback.PNG",
              fit: BoxFit.fill,
@@ -40,10 +46,16 @@ class AppFeedback extends StatelessWidget {
          ),
 
 
+
+          //Column of experiences
+
+
           Padding(
             padding: const EdgeInsets.only(top:10,),
             child: Column(
              children:[
+
+               //Overall experience
                Padding(
                  padding: const EdgeInsets.all(8.0),
                  child: Card(
@@ -85,7 +97,7 @@ class AppFeedback extends StatelessWidget {
                  ),
                ),
 
-
+               //Event Details
                Padding(
                  padding: const EdgeInsets.all(8.0),
                  child: Card(
@@ -128,6 +140,7 @@ class AppFeedback extends StatelessWidget {
                ),
 
 
+               //Event Announcements
                Padding(
                  padding: const EdgeInsets.all(8.0),
                  child: Card(
@@ -182,7 +195,7 @@ class AppFeedback extends StatelessWidget {
           SizedBox(height: deviceHeight*0.06),
 
 
-
+          // Review card + submit button
           Stack(
             overflow: Overflow.visible,
             alignment: AlignmentDirectional.bottomStart,
@@ -203,10 +216,11 @@ class AppFeedback extends StatelessWidget {
 
                 left: deviceWidth * 0.045686541,
                 right: deviceWidth * 0.012,
-                  top: deviceHeight*0.001,
+                top: deviceHeight*0.001,
 
                  child: Column(
                    children: [
+                     //Card
                     Container(
 
                       width: deviceWidth*0.6,
@@ -256,6 +270,7 @@ class AppFeedback extends StatelessWidget {
 
                     ),
 
+                     //Button
                      Padding(
                        padding: const EdgeInsets.all(10.0),
                        child: ElevatedButton(
