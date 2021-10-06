@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: MenuWidget(),
 
 
-      body:AppFeedback()
+      body:SingleChildScrollView(child: EventList())
 
 
 

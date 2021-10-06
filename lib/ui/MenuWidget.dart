@@ -1,9 +1,13 @@
+import 'package:club_calendar/ui/homePage(temporary).dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../styles.dart';
 import '../util/google_sign_in.dart';
 import 'package:sliding_switch/sliding_switch.dart';
+
+import 'app_feedback_page.dart';
+import 'event_details.dart';
 
 
 //Drawer Code
@@ -32,7 +36,8 @@ class _MenuWidgetState extends State<MenuWidget> {
     //**********************************************************************************************
 
     return Drawer(
-      child: Container(
+      child: SingleChildScrollView(
+        child:Container(
 
 
         width: deviceWidth,
@@ -121,6 +126,8 @@ class _MenuWidgetState extends State<MenuWidget> {
 
                     //TODO
                     onPressed: () {
+
+
 
                       setState(() {
                         isPressedEvent = true;
@@ -249,8 +256,12 @@ class _MenuWidgetState extends State<MenuWidget> {
                       oppositeShadowLightSource: false,
                     ),
 
-                    //TODO
+
                     onPressed: () {
+
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => AppFeedBackPage()),
+                      );
 
                       setState(() {
                         isPressedFeedBack = true;
@@ -315,6 +326,7 @@ class _MenuWidgetState extends State<MenuWidget> {
           ),
         )
       ),
+      )
     );
   }
 }
