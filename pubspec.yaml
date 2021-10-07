@@ -44,6 +44,7 @@ dependencies:
   flutter_switch: ^0.3.2
   sliding_switch: ^1.0.0
   flutter_rating_bar: ^4.0.0
+  smooth_star_rating: 1.1.1
 
 dev_dependencies:
   flutter_test:
