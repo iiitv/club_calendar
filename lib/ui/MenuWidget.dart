@@ -5,10 +5,10 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../styles.dart';
 import '../util/google_sign_in.dart';
 import 'package:sliding_switch/sliding_switch.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import 'app_feedback_page.dart';
 import 'event_details.dart';
-
 
 //Drawer Code
 class MenuWidget extends StatefulWidget {
@@ -21,41 +21,33 @@ class MenuWidget extends StatefulWidget {
 class _MenuWidgetState extends State<MenuWidget> {
   @override
   Widget build(BuildContext context) {
-
     //bool variable to keep in touch of events when button pressed
 
-    bool isPressedEvent= false;
-    bool isPressedPastEvent= false;
-    bool isPressedFeedBack= false;
-
-
+    bool isPressedEvent = false;
+    bool isPressedPastEvent = false;
+    bool isPressedFeedBack = false;
 
     var styles = Styles();
-    double deviceHeight = MediaQuery.of(context).size.height, deviceWidth = MediaQuery.of(context).size.width;
+    double deviceHeight = MediaQuery.of(context).size.height,
+        deviceWidth = MediaQuery.of(context).size.width;
 
     //**********************************************************************************************
 
     return Drawer(
-      child: SingleChildScrollView(
-        child:Container(
-
-
-         width: deviceWidth,
-         color: Styles.backgroundColor,
-         child: Container(
-          height: deviceHeight,
-
-          child: ListView(
-            children: [
-
+        child: SingleChildScrollView(
+      child: Container(
+          width: deviceWidth,
+          color: Styles.backgroundColor,
+          child: Container(
+            height: deviceHeight,
+            child: ListView(children: [
               //Image
 
               Padding(
                 padding: const EdgeInsets.all(25),
                 child: Container(
-
-                  width: deviceWidth*0.2,
-                  height: deviceHeight*0.2,
+                  width: deviceWidth * 0.2,
+                  height: deviceHeight * 0.2,
                   child: Image.asset(
                     "assets/icons/CC-Logo(1).png",
                     scale: 1.3,
@@ -67,7 +59,8 @@ class _MenuWidgetState extends State<MenuWidget> {
 
               //Slider
               Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 50,left: 10,right: 10),
+                padding: const EdgeInsets.only(
+                    top: 20, bottom: 50, left: 10, right: 10),
                 child: SizedBox(
                   height: deviceHeight * 0.06399636,
                   width: deviceWidth * 0.8,
@@ -77,18 +70,18 @@ class _MenuWidgetState extends State<MenuWidget> {
                     onChanged: (bool value) {
                       print(value);
                     },
-                    height : 55,
-                    animationDuration : const Duration(milliseconds: 400),
-                    onTap:(){},
-                    onDoubleTap:(){},
-                    onSwipe:(){},
-                    textOff : "Dark",
-                    textOn : "Light",
-                    colorOn :  Colors.white,
-                    colorOff : const Color(0xff6682c0),
-                    background : Colors.black38,
-                    buttonColor : Colors.black,
-                    inactiveColor : const Color(0xff636f7b),
+                    height: 55,
+                    animationDuration: const Duration(milliseconds: 400),
+                    onTap: () {},
+                    onDoubleTap: () {},
+                    onSwipe: () {},
+                    textOff: "Dark",
+                    textOn: "Light",
+                    colorOn: Colors.white,
+                    colorOff: const Color(0xff6682c0),
+                    background: Colors.black38,
+                    buttonColor: Colors.black,
+                    inactiveColor: const Color(0xff636f7b),
                   ),
                 ),
               ),
@@ -97,38 +90,34 @@ class _MenuWidgetState extends State<MenuWidget> {
 
               //Event
               Padding(
-
                 //Check adaptability
-                padding: const EdgeInsets.only(top: 20, bottom: 20,left: 10,right: 10),
+                padding: const EdgeInsets.only(
+                    top: 10, bottom: 10, left: 10, right: 10),
                 child: Container(
-
                   alignment: Alignment.bottomCenter,
-                  height: deviceHeight * 0.06399636,
+                  height: deviceHeight * 0.07399636,
                   width: deviceWidth * 0.79,
                   child: neu.NeumorphicButton(
                     style: neu.NeumorphicStyle(
-
                       shadowLightColorEmboss: Styles.backgroundColor,
                       shadowLightColor: Styles.backgroundColor,
                       boxShape: neu.NeumorphicBoxShape.roundRect(
                         BorderRadius.circular(
                             MediaQuery.of(context).size.height * 0.0387820513),
                       ),
-                      color: !isPressedEvent ? Styles.backgroundColor : Colors.black12,
+                      color: !isPressedEvent
+                          ? Styles.backgroundColor
+                          : Colors.black12,
 
                       shape: neu.NeumorphicShape.flat,
 
                       depth: isPressedEvent
                           ? -4.9687
                           : 4.9687, //MediaQuery.of(context).size.height*0.023,
-
                     ),
 
                     //TODO
                     onPressed: () {
-
-
-
                       setState(() {
                         isPressedEvent = true;
                       });
@@ -140,15 +129,14 @@ class _MenuWidgetState extends State<MenuWidget> {
                         children: [
                           Container(
                             padding: EdgeInsets.only(left: deviceWidth * 0.011),
-
                           ),
                           Flexible(
-
                             child: Center(
-                              child: Text(
+                              child: AutoSizeText(
                                 "Events",
-                                style: styles.headingStyle(
+                                style: TextStyle(
                                     color: Styles.fontColor,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.center,
                               ),
@@ -165,24 +153,24 @@ class _MenuWidgetState extends State<MenuWidget> {
 
               //Past Events
               Padding(
-
                 //Check adaptability
-                padding: const EdgeInsets.only(top: 20, bottom: 20,left: 10,right: 10),
+                padding: const EdgeInsets.only(
+                    top: 10, bottom: 10, left: 10, right: 10),
                 child: Container(
-
                   alignment: Alignment.bottomCenter,
-                  height: deviceHeight * 0.06399636,
+                  height: deviceHeight * 0.07399636,
                   width: deviceWidth * 0.79,
                   child: neu.NeumorphicButton(
                     style: neu.NeumorphicStyle(
-
                       shadowLightColorEmboss: Styles.backgroundColor,
                       shadowLightColor: Styles.backgroundColor,
                       boxShape: neu.NeumorphicBoxShape.roundRect(
                         BorderRadius.circular(
                             MediaQuery.of(context).size.height * 0.0387820513),
                       ),
-                      color: !isPressedPastEvent ? Styles.backgroundColor : Colors.black12,
+                      color: !isPressedPastEvent
+                          ? Styles.backgroundColor
+                          : Colors.black12,
                       intensity: 1,
                       shape: neu.NeumorphicShape.flat,
 
@@ -194,7 +182,6 @@ class _MenuWidgetState extends State<MenuWidget> {
 
                     //TODO
                     onPressed: () {
-
                       setState(() {
                         isPressedPastEvent = true;
                       });
@@ -206,16 +193,16 @@ class _MenuWidgetState extends State<MenuWidget> {
                         children: [
                           Container(
                             padding: EdgeInsets.only(left: deviceWidth * 0.011),
-
                           ),
                           Flexible(
-
                             child: Center(
-                              child: Text(
+                              child:  AutoSizeText(
                                 "Past Events",
-                                style: styles.headingStyle(
+                                style: TextStyle(
                                     color: Styles.fontColor,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20
+                                    ),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -231,22 +218,23 @@ class _MenuWidgetState extends State<MenuWidget> {
 
               //Send Feedback
               Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 20,left: 10,right: 10),
+                padding: const EdgeInsets.only(
+                    top: 10, bottom: 10, left: 10, right: 10),
                 child: Container(
-
                   alignment: Alignment.bottomCenter,
-                  height: deviceHeight * 0.06399636,
+                  height: deviceHeight * 0.07399636,
                   width: deviceWidth * 0.79,
                   child: neu.NeumorphicButton(
                     style: neu.NeumorphicStyle(
-
                       shadowLightColorEmboss: Styles.backgroundColor,
                       shadowLightColor: Styles.backgroundColor,
                       boxShape: neu.NeumorphicBoxShape.roundRect(
                         BorderRadius.circular(
                             MediaQuery.of(context).size.height * 0.0387820513),
                       ),
-                      color: !isPressedFeedBack? Styles.backgroundColor : Colors.black12,
+                      color: !isPressedFeedBack
+                          ? Styles.backgroundColor
+                          : Colors.black12,
                       intensity: 1,
                       shape: neu.NeumorphicShape.flat,
 
@@ -255,12 +243,11 @@ class _MenuWidgetState extends State<MenuWidget> {
                           : 4.9687, //MediaQuery.of(context).size.height*0.023,
                       oppositeShadowLightSource: false,
                     ),
-
-
                     onPressed: () {
-
                       Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => AppFeedBackPage()),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AppFeedBackPage()),
                       );
 
                       setState(() {
@@ -274,16 +261,16 @@ class _MenuWidgetState extends State<MenuWidget> {
                         children: [
                           Container(
                             padding: EdgeInsets.only(left: deviceWidth * 0.011),
-
                           ),
                           Flexible(
-
                             child: Center(
-                              child: Text(
+                              child: AutoSizeText(
                                 "Send feedback",
-                                style: styles.headingStyle(
+                                style: TextStyle(
                                     color: Styles.fontColor,
-                                    fontWeight: FontWeight.w400),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20
+                                    ),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -297,21 +284,17 @@ class _MenuWidgetState extends State<MenuWidget> {
 
               //**********************************************************************************************
 
-
-              SizedBox(height: deviceHeight*0.07,),
-
-
+              SizedBox(
+                height: deviceHeight * 0.07,
+              ),
 
               //Signout Button
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: Align(
-                  alignment: Alignment.bottomLeft ,
+                  alignment: Alignment.bottomLeft,
                   child: FloatingActionButton(
-
                     backgroundColor: Colors.grey[800],
-
-
                     onPressed: () {
                       var googleSignMe = GoogleSignMeIn();
                       googleSignMe.logout();
@@ -320,13 +303,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                   ),
                 ),
               ),
-
-            ]
-
-          ),
-        )
-      ),
-      )
-    );
+            ]),
+          )),
+    ));
   }
 }
