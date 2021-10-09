@@ -1,3 +1,4 @@
+import 'package:club_calendar/ui/slider_widget_present.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 import 'package:sliding_sheet/sliding_sheet.dart';
@@ -26,10 +27,11 @@ class EventDetailsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Styles.backgroundColor,
       body: Stack(
+
         children: [
           SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   padding: EdgeInsets.only(
@@ -89,136 +91,14 @@ class EventDetailsPage extends StatelessWidget {
               ],
             ),
           ),
-          slider(styles, context),
+          sliderPresent(context),
         ],
       ),
     );
   }
 }
 
-Widget slider(var styles, BuildContext context) {
-  return SlidingSheet(
-    color: Styles.backgroundColor,
-    elevation: 8,
-    cornerRadius: 33,
-    snapSpec: const SnapSpec(
-      snap: true,
-      snappings: [70, 230, 550],
-      positioning: SnapPositioning.pixelOffset,
-    ),
-    builder: (context, state) {
-      var styles = Styles();
-      List<Map<String, dynamic>> _info = [
-        // {'image': 'assets/icons/speaker.png', 'info': '7 Sep'},
-        {'image': 'assets/icons/checklists2.png', 'info': 'None'},
-        {'image': 'assets/icons/award 1.png', 'info': 'Rs. 25k'},
-      ];
-      return Container(
-        height: MediaQuery.of(context).size.height * 0.58,
-        // width: MediaQuery.of(buildcontext).size.width,
-        decoration: BoxDecoration(
-          color: Styles.backgroundColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(33.0),
-            topRight: Radius.circular(33.0),
-          ),
-        ),
-        child: SingleChildScrollView(
-          child: Wrap(
-            children: <Widget>[
-              SizedBox(
-                height: 80,
-              ),
-              ListTile(
-                leading: styles.leadingListTile('assets/icons/speaker.png'),
-                title: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Ashutosh Singh',
-                      style: styles.customStyle(
-                          size: 20.0, color: Styles.detailsColor),
-                    ),
-                    Text(
-                      'Pushkar Patel',
-                      style: styles.customStyle(
-                          size: 20.0, color: Styles.detailsColor),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 80,
-              ),
-              Container(
-                height: 80,
-                child: styles.grid(styles, _info),
-              ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.87,
-                  alignment: Alignment.center,
-                  color: Styles.buttonColor,
-                  height: 1.5,
-                  padding: EdgeInsets.all(16),
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              ListTile(
-                leading: styles.leadingListTile('assets/icons/medal1.png',
-                    radius: 60.0),
-                title: Text(
-                  'NA',
-                  style:
-                  styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                ),
-              ),
-              SizedBox(
-                height: 90,
-              ),
-              ListTile(
-                leading: styles.leadingListTile('assets/icons/feedback1.png'),
-                title: Text(
-                  'NA',
-                  style:
-                  styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    },
-    headerBuilder: (context, state) {
-      return Container(
-        height: 70,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(33.0),
-            topRight: Radius.circular(33.0),
-          ),
-          color: Styles.backgroundColor,
-        ),
-        child: neu.NeumorphicButton(
-          onPressed: () {
-            print('hi');
-          },
-          style: _style(context),
-          child: Center(
-            child: Text(
-              'More Details',
-              style: styles.descriptionStyle(color: Styles.buttonColor),
-            ),
-          ),
-        ),
-      );
-    },
-  );
-}
+
 
 neu.NeumorphicStyle _style(BuildContext ctx) {
   return neu.NeumorphicStyle(
