@@ -6,6 +6,8 @@ import '../styles.dart';
 import 'dialog_widget.dart';
 
 Widget slider(BuildContext context) {
+  double deviceHeight = MediaQuery.of(context).size.height,
+      deviceWidth = MediaQuery.of(context).size.width;
   Styles styles= new Styles();
   return SlidingSheet(
     color: Styles.backgroundColor,
@@ -175,7 +177,7 @@ Widget slider(BuildContext context) {
                         direction: Axis.horizontal,
                         allowHalfRating: true,
                         itemCount: 5,
-                        itemSize: 30,
+                        itemSize: deviceWidth*0.05,
                         itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
                         itemBuilder: (context, _) => Icon(
                           Icons.star,
