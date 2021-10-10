@@ -1,17 +1,17 @@
+import 'package:club_calendar/ui/past_event_list.dart';
 import 'package:flutter/material.dart';
-
 import '../styles.dart';
 import 'MenuWidget.dart';
-import 'event_list.dart';
 
-class EventListPage extends StatefulWidget {
-  const EventListPage({Key key}) : super(key: key);
+
+class PastEventListPage extends StatefulWidget {
+  const PastEventListPage({Key key}) : super(key: key);
 
   @override
-  _EventListPageState createState() => _EventListPageState();
+  _PastEventListPageState createState() => _PastEventListPageState();
 }
 
-class _EventListPageState extends State<EventListPage> {
+class _PastEventListPageState extends State<PastEventListPage> {
   Styles styles =new Styles();
 
   @override
@@ -45,7 +45,7 @@ class _EventListPageState extends State<EventListPage> {
 
         ),
         drawer: MenuWidget(),
-        body:EventList()
+        body: PastEventList()
 
 
     );

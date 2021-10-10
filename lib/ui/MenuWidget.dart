@@ -1,4 +1,5 @@
 import 'package:club_calendar/ui/homePage(temporary).dart';
+import 'package:club_calendar/ui/past_event_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -9,6 +10,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 import 'app_feedback_page.dart';
 import 'event_details.dart';
+import 'event_list_page.dart';
 
 //Drawer Code
 class MenuWidget extends StatefulWidget {
@@ -118,6 +120,15 @@ class _MenuWidgetState extends State<MenuWidget> {
 
                     //TODO
                     onPressed: () {
+
+
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => EventListPage()),
+                      );
+
+
+
+
                       setState(() {
                         isPressedEvent = true;
                       });
@@ -182,6 +193,13 @@ class _MenuWidgetState extends State<MenuWidget> {
 
                     //TODO
                     onPressed: () {
+
+
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => PastEventListPage()),
+                      );
+
+
                       setState(() {
                         isPressedPastEvent = true;
                       });

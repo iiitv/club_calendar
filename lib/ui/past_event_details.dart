@@ -1,11 +1,13 @@
-import 'package:club_calendar/ui/slider_widget_present.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
+
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
 import '../styles.dart';
-class EventDetailsPage extends StatelessWidget {
-  static const String routeName = '\EventDetailsScreen';
+import 'dialog_widget.dart';
+import 'slider_widget.dart';
+class PastEventDetailsPage extends StatelessWidget {
+
   final styles = Styles();
   final List<Map<String, dynamic>> _iconsInfo = [
     {
@@ -25,13 +27,15 @@ class EventDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      // returns main page with picture and all
       backgroundColor: Styles.backgroundColor,
       body: Stack(
-
         children: [
+          //One bug Fixed!!
           SingleChildScrollView(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
                   padding: EdgeInsets.only(
@@ -91,7 +95,7 @@ class EventDetailsPage extends StatelessWidget {
               ],
             ),
           ),
-          sliderPresent(context),
+          slider(context),
         ],
       ),
     );
@@ -99,24 +103,7 @@ class EventDetailsPage extends StatelessWidget {
 }
 
 
+//Slider Widget
 
-neu.NeumorphicStyle _style(BuildContext ctx) {
-  return neu.NeumorphicStyle(
-    lightSource: neu.LightSource.top,
-    shadowLightColorEmboss: Colors.white,
-    shadowLightColor: Styles.backgroundColor,
-    boxShape: neu.NeumorphicBoxShape.roundRect(
-      BorderRadius.only(
-        topLeft: Radius.circular(MediaQuery.of(ctx).size.height * 0.0387820513),
-        topRight:
-        Radius.circular(MediaQuery.of(ctx).size.height * 0.0387820513),
-      ),
-    ),
-    color: Styles.backgroundColor,
-    intensity: 0.56,
-    shape: neu.NeumorphicShape.concave,
-    depth: -19.96877, //MediaQuery.of(context).size.height*0.023,
-    oppositeShadowLightSource: true,
-  );
-}
+
 

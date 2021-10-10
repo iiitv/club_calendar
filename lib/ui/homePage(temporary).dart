@@ -2,9 +2,11 @@
 //this is made for the checking whether the login page is siigning correctly
 import 'package:club_calendar/styles.dart';
 import 'package:club_calendar/ui/event_list.dart';
+import 'package:club_calendar/ui/past_event_list.dart';
 import 'package:flutter/material.dart';
 import 'MenuWidget.dart';
 import 'app_feedback.dart';
+import 'event_list_page.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -85,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       drawer: MenuWidget(),
 
-      body:SingleChildScrollView(child: EventList())
+      body:EventList()
 
 
 
