@@ -1,22 +1,30 @@
-import 'package:club_calendar/ui/past_event_list.dart';
 import 'package:flutter/material.dart';
-import '../styles.dart';
-import 'MenuWidget.dart';
 
+import '../../styles.dart';
+import '../widgets/MenuWidget.dart';
+import '../utils/app_feedback.dart';
 
-class PastEventListPage extends StatefulWidget {
-  const PastEventListPage({Key key}) : super(key: key);
+class AppFeedBackPage extends StatefulWidget {
+  const AppFeedBackPage({Key key}) : super(key: key);
+
+  static const routeName = '/appFeedbackPage';
 
   @override
-  _PastEventListPageState createState() => _PastEventListPageState();
+  _AppFeedBackPageState createState() => _AppFeedBackPageState();
 }
 
-class _PastEventListPageState extends State<PastEventListPage> {
-  Styles styles =new Styles();
+class _AppFeedBackPageState extends State<AppFeedBackPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
 
   @override
   Widget build(BuildContext context) {
+    Styles styles = new Styles();
     return Scaffold(
+
+        backgroundColor: Styles.backgroundColor,
+        key: _scaffoldKey,
+
         appBar: AppBar(
 
           backgroundColor: Styles.backgroundColor,
@@ -45,9 +53,9 @@ class _PastEventListPageState extends State<PastEventListPage> {
 
         ),
         drawer: MenuWidget(),
-        body: PastEventList()
-
+        body:AppFeedback()
 
     );
+
   }
 }

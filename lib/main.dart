@@ -5,9 +5,9 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 import './util/cloud_messaging_handler.dart';
 import './util/crashlytics_handler.dart';
-import './ui/login_screen.dart';
-import './ui/homePage(temporary).dart';
-import 'ui/event_details.dart';
+import 'ui/pages/login_screen.dart';
+import 'ui/pages/homePage(temporary).dart';
+import 'ui/utils/event_details.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

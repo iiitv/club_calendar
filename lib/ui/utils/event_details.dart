@@ -1,9 +1,9 @@
-import 'package:club_calendar/ui/slider_widget_present.dart';
+import 'package:club_calendar/ui/widgets/slider_widget_present.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 import 'package:sliding_sheet/sliding_sheet.dart';
 
-import '../styles.dart';
+import '../../styles.dart';
 class EventDetailsPage extends StatelessWidget {
   static const String routeName = '\EventDetailsScreen';
   final styles = Styles();

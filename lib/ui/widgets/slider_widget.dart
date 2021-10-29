@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
-import '../styles.dart';
-import 'dialog_widget.dart';
+import '../../styles.dart';
+import '../utils/dialog_widget.dart';
 
 Widget slider(BuildContext context) {
   double deviceHeight = MediaQuery.of(context).size.height,

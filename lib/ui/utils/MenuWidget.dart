@@ -1,16 +1,16 @@
-import 'package:club_calendar/ui/homePage(temporary).dart';
-import 'package:club_calendar/ui/past_event_page.dart';
+import 'package:club_calendar/ui/pages/homePage(temporary).dart';
+import 'package:club_calendar/ui/pages/past_event_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import '../styles.dart';
-import '../util/google_sign_in.dart';
+import '../../styles.dart';
+import '../../util/google_sign_in.dart';
 import 'package:sliding_switch/sliding_switch.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-import 'app_feedback_page.dart';
+import '../pages/app_feedback_page.dart';
 import 'event_details.dart';
-import 'event_list_page.dart';
+import '../pages/event_list_page.dart';
 
 //Drawer Code
 class MenuWidget extends StatefulWidget {
