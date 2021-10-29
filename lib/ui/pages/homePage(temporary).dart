@@ -1,11 +1,11 @@
 //this is temporary homepage till the th erequired homepage is made.
 //this is made for the checking whether the login page is siigning correctly
 import 'package:club_calendar/styles.dart';
-import 'package:club_calendar/ui/event_list.dart';
-import 'package:club_calendar/ui/past_event_list.dart';
+import 'package:club_calendar/ui/utils/event_list.dart';
+import 'package:club_calendar/ui/utils/past_event_list.dart';
 import 'package:flutter/material.dart';
-import 'MenuWidget.dart';
-import 'app_feedback.dart';
+import '../widgets/MenuWidget.dart';
+import '../utils/app_feedback.dart';
 import 'event_list_page.dart';
 
 

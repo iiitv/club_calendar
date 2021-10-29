@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
-import '../styles.dart';
+import '../../styles.dart';
 import 'dialog_widget.dart';
-import 'slider_widget.dart';
+import '../widgets/slider_widget.dart';
 class PastEventDetailsPage extends StatelessWidget {
 
   final styles = Styles();

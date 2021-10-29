@@ -1,18 +1,20 @@
 import 'package:club_calendar/styles.dart';
+import 'package:club_calendar/ui/utils/past_event_details.dart';
 import 'package:flutter/material.dart';
-import 'EventCard.dart';
+import '../widgets/EventCard.dart';
 import 'event_details.dart';
+import 'event_list.dart';
 
-class EventList extends StatefulWidget {
-  const EventList({Key key}) : super(key: key);
+class PastEventList extends StatefulWidget {
+  const PastEventList({Key key}) : super(key: key);
 
   @override
-  _EventListState createState() => _EventListState();
+  _PastEventListState createState() => _PastEventListState();
 }
 
-class _EventListState extends State<EventList> {
-  final styles=Styles();
+class _PastEventListState extends State<PastEventList> {
   @override
+  Styles styles = new Styles();
   Widget build(BuildContext context) {
     return SingleChildScrollView(
 
@@ -44,17 +46,17 @@ class _EventListState extends State<EventList> {
 
 
                           ),
-                          child: Text("Month",
-                          style: styles.headingStyle(),
+                          child: Text("PastMonth",
+                            style: styles.headingStyle(),
 
-                        ),
+                          ),
                         ),
 
                         Padding(
                           padding: EdgeInsets.only(left: 20,right:20,top: 10,bottom: 20),
                           child: Container(
                             child: Text("n Events",
-                            style: styles.headingStyle(),),
+                              style: styles.headingStyle(),),
                           ),
                         ),
 
@@ -68,16 +70,20 @@ class _EventListState extends State<EventList> {
 
                     GestureDetector(
                         onTap: (){
-                          Navigator.of(context).pushNamed(EventDetailsPage.routeName);
+                          Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => PastEventDetailsPage()),
+                          );
                           print("Event Clicked!");
                         }, //TODO,
-                        child: EventCard(date: '7',day: 'MON',name:'Event1',duration: 'x days')),
+                        child: EventCard(date: '7',day: 'MON',name:'PastEvent1',duration: 'x days')),
                     GestureDetector(
                         onTap: (){
-                          Navigator.of(context).pushNamed(EventDetailsPage.routeName);
+                          Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => PastEventDetailsPage()),
+                          );
                           print("Event Clicked!");
                         }, //TODO,
-                        child: EventCard(date: '7',day: 'MON',name:'Event1',duration: 'x days')),
+                        child: EventCard(date: '7',day: 'MON',name:'PastEvent1',duration: 'x days')),
                   ],
 
                 ),
@@ -103,7 +109,7 @@ class _EventListState extends State<EventList> {
 
 
                           ),
-                          child: Text("Month",
+                          child: Text("PastMonth",
                             style: styles.headingStyle(),
 
                           ),
@@ -127,26 +133,33 @@ class _EventListState extends State<EventList> {
 
                     GestureDetector(
                         onTap: (){
-                          Navigator.of(context).pushNamed(EventDetailsPage.routeName);
+                          Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => PastEventDetailsPage()),
+                          );
                           print("Event Clicked!");
                         }, //TODO,
-                        child: EventCard(date: '7',day: 'MON',name:'Event1',duration: 'x days')),
+                        child: EventCard(date: '7',day: 'MON',name:'PastEvent1',duration: 'x days')),
                     GestureDetector(
                         onTap: (){
-                          Navigator.of(context).pushNamed(EventDetailsPage.routeName);
+                          Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => PastEventDetailsPage()),
+                          );
                           print("Event Clicked!");
                         }, //TODO,
-                        child: EventCard(date: '7',day: 'MON',name:'Event1',duration: 'x days')),
+                        child: EventCard(date: '7',day: 'MON',name:'PastEvent1',duration: 'x days')),
                   ],
 
                 ),
               ),
+
 
             ],
           ),
         ),
       ),
     );
+
   }
 }
+
 
