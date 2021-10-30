@@ -12,7 +12,7 @@ class DialogScreen extends StatefulWidget {
 
 class _DialogScreenState extends State<DialogScreen> {
   @override
-  Styles styles = new Styles();
+  Styles styles = new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
 
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height;

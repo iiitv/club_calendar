@@ -12,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool isPressed = false;
-  var styles = Styles();
+  var styles = Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
   @override
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height,

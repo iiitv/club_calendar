@@ -12,7 +12,7 @@ class EventListPage extends StatefulWidget {
 }
 
 class _EventListPageState extends State<EventListPage> {
-  Styles styles =new Styles();
+  Styles styles =new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
 
   @override
   Widget build(BuildContext context) {

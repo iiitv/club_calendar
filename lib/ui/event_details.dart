@@ -6,7 +6,7 @@ import 'package:sliding_sheet/sliding_sheet.dart';
 import '../styles.dart';
 class EventDetailsPage extends StatelessWidget {
   static const String routeName = '\EventDetailsScreen';
-  final styles = Styles();
+  final styles = Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
   final List<Map<String, dynamic>> _iconsInfo = [
     {
       'iconData': Icons.calendar_today,

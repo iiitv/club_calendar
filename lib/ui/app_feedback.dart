@@ -1,6 +1,7 @@
 import 'package:club_calendar/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'MenuWidget.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -15,11 +16,18 @@ class AppFeedback extends StatelessWidget {
     double deviceHeight = MediaQuery.of(context).size.height,
         deviceWidth = MediaQuery.of(context).size.width;
 
-    Styles styles = new Styles();
+    Styles styles = new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.white);
+    if (lit == true) {
+      var styles = Styles(Colors.white, Colors.black,Colors.black12,Colors.black12);
+    }
     //***************************************************************************************
 
     return SingleChildScrollView(
-      child: Column(
+      child: 
+      Container(
+        color: Styles.backgroundColor,
+        child:
+      Column(
 
         children: [
 
@@ -51,7 +59,6 @@ class AppFeedback extends StatelessWidget {
             padding: const EdgeInsets.only(top:10,),
             child: Column(
              children:[
-
                //Overall experience
                Padding(
                  padding: const EdgeInsets.all(8.0),
@@ -79,7 +86,7 @@ class AppFeedback extends StatelessWidget {
                              Icons.star,
                              color: Colors.amber,
                            ),
-                           unratedColor: Colors.white,
+                           unratedColor: Styles.subCardColor,
                            onRatingUpdate: (rating) {
                              print("Overall Experience : ${rating}");
                            },
@@ -121,7 +128,7 @@ class AppFeedback extends StatelessWidget {
                              Icons.star,
                              color: Colors.amber,
                            ),
-                           unratedColor: Colors.white,
+                           unratedColor: Styles.subCardColor,
                            onRatingUpdate: (rating) {
                              print("Event Details ${rating}");
                            },
@@ -171,7 +178,7 @@ class AppFeedback extends StatelessWidget {
                              Icons.star,
                              color: Colors.amber,
                            ),
-                           unratedColor: Colors.white,
+                           unratedColor: Styles.subCardColor,
                            onRatingUpdate: (rating) {
                              print("Event announcements ${rating}");
                            },
@@ -186,6 +193,7 @@ class AppFeedback extends StatelessWidget {
                  ),
                )
       ]
+            
          ),
           ),
 
@@ -301,7 +309,7 @@ class AppFeedback extends StatelessWidget {
 
             ],
           ),
-      ]
+      ])
       ),
     );
 

@@ -8,7 +8,8 @@ import 'dialog_widget.dart';
 import 'slider_widget.dart';
 class PastEventDetailsPage extends StatelessWidget {
 
-  final styles = Styles();
+  final styles = Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
+ 
   final List<Map<String, dynamic>> _iconsInfo = [
     {
       'iconData': Icons.calendar_today,

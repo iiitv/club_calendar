@@ -8,7 +8,7 @@ import 'dialog_widget.dart';
 Widget slider(BuildContext context) {
   double deviceHeight = MediaQuery.of(context).size.height,
       deviceWidth = MediaQuery.of(context).size.width;
-  Styles styles= new Styles();
+  Styles styles= new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
   return SlidingSheet(
 
     color: Styles.backgroundColor,
@@ -20,7 +20,7 @@ Widget slider(BuildContext context) {
       positioning: SnapPositioning.pixelOffset,
     ),
     builder: (context, state) {
-      var styles = Styles();
+      var styles = Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
       List<Map<String, dynamic>> _info = [
         // {'image': 'assets/icons/speaker.png', 'info': '7 Sep'},
         {'image': 'assets/icons/checklists2.png', 'info': 'None'},

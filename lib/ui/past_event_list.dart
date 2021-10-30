@@ -1,6 +1,7 @@
 import 'package:club_calendar/styles.dart';
 import 'package:club_calendar/ui/past_event_details.dart';
 import 'package:flutter/material.dart';
+import 'package:club_calendar/ui/MenuWidget.dart';
 import 'EventCard.dart';
 import 'event_details.dart';
 import 'event_list.dart';
@@ -14,8 +15,10 @@ class PastEventList extends StatefulWidget {
 
 class _PastEventListState extends State<PastEventList> {
   @override
-  Styles styles = new Styles();
   Widget build(BuildContext context) {
+  Styles styles = new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
+   if(lit==true)
+    final styles=Styles(Colors.white,Colors.black,Colors.white60,Colors.white12);
     return SingleChildScrollView(
 
       child: Container(

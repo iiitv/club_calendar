@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    Styles styles = new Styles();
+    Styles styles = new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
 
     return Scaffold(
 

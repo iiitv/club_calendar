@@ -55,6 +55,22 @@
           }
         },
         {
+          "client_id": "1012587669993-df7cql2c589llepq0u26157vvjj4hqb0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "b3ab6e09695210226fb8670a84c534cf7a501f83"
+          }
+        },
+        {
+          "client_id": "1012587669993-lu5f65fj1j1p9r1u6t53s3nppvphnqbe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iiitvadodara.club_calendar",
+            "certificate_hash": "acc84fdee92b84c4652762ebe2728fa3ad3b4f64"
+          }
+        },
+        {
           "client_id": "1012587669993-oq5hjb3n70oc0aiqjcf85cr6rndre6pb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

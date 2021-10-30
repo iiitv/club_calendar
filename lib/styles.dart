@@ -5,14 +5,24 @@ import 'package:flutter/rendering.dart';
 
 class Styles {
   static double elevation = 10.0;
-  static const Color backgroundColor = Color(0xff313131);
+  static Color backgroundColor = Color(0xff313131);
+  static Color cardColor = Colors.black12;
+  static Color subCardColor = Colors.black38;
   static const Color buttonColor = Color(0xffF48076);
-  static const Color fontColor = Color.fromRGBO(229, 229, 229, 1);
+  static Color textColor = Color.fromRGBO(229, 229, 229, 1);
+  static Color fontColor = Color.fromRGBO(229, 229, 229, 1);
   static const Color descriptionColor = Color.fromRGBO(204, 203, 203, 1);
   static const Color detailsColor = Color.fromRGBO(187, 187, 187, 1);
   static const String googleImage = "assets/icons/google_bg.png";
   static const String logoImage = "assets/icons/CC-Logo(1).png";
-
+  Styles(colour, textcolor, cardcolor, subcard) {
+    backgroundColor = colour;
+    textColor = textcolor;
+    fontColor = textcolor;
+    cardColor = cardcolor;
+    subCardColor = subcard;
+  }
+  Styles.namedConstructor() {}
   Widget getIcon(IconData iconData,
       {colour = buttonColor,
       defaultSize = 40.0,
@@ -37,19 +47,19 @@ class Styles {
   }
 
   TextStyle customStyle(
-      {color = fontColor, size = 18.0, fontWeight = FontWeight.w400}) {
+      {size: 18.0, color = "", fontWeight = FontWeight.w500}) {
     return GoogleFonts.montserrat(
-        fontSize: size, color: color, fontWeight: fontWeight);
+        fontSize: 18.0, color: fontColor, fontWeight: FontWeight.w400);
   }
 
-  TextStyle titleStyle({color = fontColor}) {
+  TextStyle titleStyle({color = ""}) {
     return GoogleFonts.montserrat(
-        fontSize: 28, color: color, fontWeight: FontWeight.w500);
+        fontSize: 28, color: fontColor, fontWeight: FontWeight.w500);
   }
 
-  TextStyle headingStyle({color = fontColor, fontWeight = FontWeight.w500}) {
+  TextStyle headingStyle({color = "", fontWeight = FontWeight.w500}) {
     return GoogleFonts.montserrat(
-        fontSize: 20, color: color, fontWeight: fontWeight);
+        fontSize: 20, color: fontColor, fontWeight: fontWeight);
   }
 
   TextStyle descriptionStyle({color = descriptionColor}) {
@@ -57,19 +67,16 @@ class Styles {
         fontSize: 18, color: color, fontWeight: FontWeight.w400);
   }
 
-  TextStyle cardHeadingStyle({color = fontColor, fontWeight= FontWeight.w400}){
+  TextStyle cardHeadingStyle({color = "", fontWeight = FontWeight.w400}) {
     return GoogleFonts.montserrat(
-        fontSize: 25, color: color, fontWeight: fontWeight);
+        fontSize: 25, color: fontColor, fontWeight: fontWeight);
   }
 
-  TextStyle cardDurationStyle({color = buttonColor, fontWeight= FontWeight.w400}){
+  TextStyle cardDurationStyle(
+      {color = buttonColor, fontWeight = FontWeight.w400}) {
     return GoogleFonts.montserrat(
         fontSize: 16, color: color, fontWeight: fontWeight);
   }
-
-
-
-
 
   List<BoxShadow> shadowToContainer() {
     return [
@@ -145,8 +152,8 @@ class Styles {
             info[index]['info'].toString(),
             softWrap: false,
             style: (info[index]['iconData'] != null)
-                ? styles.headingStyle(fontWeight: FontWeight.normal)
-                : styles.customStyle(size: 20.0,color: Styles.detailsColor),
+                ? styles.headingStyle(fontWeight: FontWeight.normal,color:Colors.red)
+                : styles.customStyle(size: 20.0, color: Colors.red),
           ),
           subtitle: (index == 0 && info[index]['iconData'] != null)
               ? Text(

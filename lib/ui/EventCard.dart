@@ -1,4 +1,5 @@
 import 'package:club_calendar/styles.dart';
+import 'package:club_calendar/ui/MenuWidget.dart';
 import 'package:flutter/material.dart';
 
 class EventCard extends StatefulWidget {
@@ -17,8 +18,9 @@ class EventCard extends StatefulWidget {
 class _EventCardState extends State<EventCard> {
   @override
   Widget build(BuildContext context) {
-
-    final styles=Styles();
+    final styles=Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black);
+if(lit==true)
+    final styles=Styles(Colors.white,Colors.black,Colors.white60,Colors.white);
 
     //For date part
 
@@ -34,16 +36,14 @@ class _EventCardState extends State<EventCard> {
 
          ),
              child: Card(
-
-             color: Colors.black12,
+             color: Styles.subCardColor,
              child: Column(
                  children: [
                    Padding(
                     padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
                        child: Text(widget.date,
                             style: styles.cardHeadingStyle(
-
-                           color: Styles.buttonColor,
+                            color: Styles.backgroundColor,
                            fontWeight: FontWeight.w300,
 
 
@@ -60,7 +60,7 @@ class _EventCardState extends State<EventCard> {
 
                     )
                 ),
-              )
+              ),
            ],
          ),
         )
@@ -99,7 +99,7 @@ class _EventCardState extends State<EventCard> {
     return Padding(
       padding: const EdgeInsets.all(15),
       child: Card(
-          color: Colors.black12,
+          color: Styles.cardColor,
           elevation: 5.0,
           child: Container(
             width: double.infinity,
