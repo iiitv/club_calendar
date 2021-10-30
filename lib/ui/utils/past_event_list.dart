@@ -16,6 +16,7 @@ class _PastEventListState extends State<PastEventList> {
   @override
   Widget build(BuildContext context) {
   Styles styles = new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
+   
    if(lit==true)
     final styles=Styles(Colors.white,Colors.black,Colors.white60,Colors.white12);
     return SingleChildScrollView(
