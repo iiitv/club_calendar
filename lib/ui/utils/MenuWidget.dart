@@ -51,7 +51,7 @@ class _MenuWidgetState extends State<MenuWidget> {
       child: Column(
         children: [
           SizedBox(
-                height: 40,
+                height: 80,
               ),
               Column(
                 children:[

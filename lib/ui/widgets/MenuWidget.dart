@@ -7,20 +7,23 @@ import '../../styles.dart';
 import '../../util/google_sign_in.dart';
 import 'package:sliding_switch/sliding_switch.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-
-import '../pages/app_feedback_page.dart';
-import '../utils/event_details.dart';
 import '../pages/event_list_page.dart';
+import '../pages/app_feedback_page.dart';
+import '../utils/event_list.dart';
+import '../utils/app_feedback.dart';
+import '../utils/event_details.dart';
+import '../utils/event_list.dart';
+import '../utils/event_list.dart';
 
 //Drawer Code
-bool lit = false;
-
 class MenuWidget extends StatefulWidget {
   const MenuWidget({Key key}) : super(key: key);
 
   @override
   _MenuWidgetState createState() => _MenuWidgetState();
 }
+
+bool lit = false;
 
 class _MenuWidgetState extends State<MenuWidget> {
   @override
@@ -31,26 +34,48 @@ class _MenuWidgetState extends State<MenuWidget> {
     bool isPressedPastEvent = false;
     bool isPressedFeedBack = false;
 
-    final styles = Styles(
-        Colors.grey.shade800, Colors.white, Colors.black12, Colors.black);
-    if (lit == true)
-      final styles =
-          Styles(Colors.white, Colors.black, Colors.white60, Colors.white);
+    var styles = Styles(Colors.grey.shade800, Colors.white,Colors.black12,Colors.white12);
+    if (lit == true) {
+      var styles = Styles(Colors.white, Colors.black,Colors.white60,Colors.white60);
+    }
+
     double deviceHeight = MediaQuery.of(context).size.height,
         deviceWidth = MediaQuery.of(context).size.width;
 
     //**********************************************************************************************
-
     return Drawer(
         child: SingleChildScrollView(
-      child: Container(
-          width: deviceWidth,
-          color: Styles.backgroundColor,
-          child: Container(
+            child: Container(
+      width: deviceWidth,
+      color: Styles.backgroundColor,
+      child: Column(
+        children: [
+          SizedBox(
+                height: 40,
+              ),
+              Column(
+                children:[
+                  Text("Dark-Light",
+                  style: TextStyle(color: Styles.fontColor),
+                  ),
+          Switch(
+              value: lit,
+              onChanged: (val) {
+                setState(() {
+                  lit = val;
+                   Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => EventListPage()),
+                      );
+                });
+              }),
+                ]),
+          Container(
             height: deviceHeight,
             child: ListView(children: [
+          
               //Image
-
               Padding(
                 padding: const EdgeInsets.all(25),
                 child: Container(
@@ -64,35 +89,39 @@ class _MenuWidgetState extends State<MenuWidget> {
               ),
 
               //**********************************************************************************************
+              SizedBox(
+                width:10,
+                height: 40,
+              ),
 
               //Slider
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 20, bottom: 50, left: 10, right: 10),
-                child: SizedBox(
-                  height: deviceHeight * 0.06399636,
-                  width: deviceWidth * 0.8,
-                  child: SlidingSwitch(
-                    value: false,
-                    width: deviceWidth * 0.731, //check adaptability
-                    onChanged: (bool value) {
-                      print(value);
-                    },
-                    height: 55,
-                    animationDuration: const Duration(milliseconds: 400),
-                    onTap: () {},
-                    onDoubleTap: () {},
-                    onSwipe: () {},
-                    textOff: "Dark",
-                    textOn: "Light",
-                    colorOn: Colors.white,
-                    colorOff: const Color(0xff6682c0),
-                    background: Colors.black38,
-                    buttonColor: Colors.black,
-                    inactiveColor: const Color(0xff636f7b),
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(
+              //       top: 20, bottom: 50, left: 10, right: 10),
+              //   child: SizedBox(
+              //     height: deviceHeight * 0.06399636,
+              //     width: deviceWidth * 0.8,
+              //     child: SlidingSwitch(
+              //       value: false,
+              //       width: deviceWidth * 0.731, //check adaptability
+              //       onChanged: (bool value) {
+              //         print(value);
+              //       },
+              //       height: 55,
+              //       animationDuration: const Duration(milliseconds: 400),
+              //       onTap: () {},
+              //       onDoubleTap: () {},
+              //       onSwipe: () {},
+              //       textOff: "Dark",
+              //       textOn: "Light",
+              //       colorOn: Colors.white,
+              //       colorOff: const Color(0xff6682c0),
+              //       background: Colors.black38,
+              //       buttonColor: Colors.black,
+              //       inactiveColor: const Color(0xff636f7b),
+              //     ),
+              //   ),
+              // ),
 
               //**********************************************************************************************
 
@@ -149,7 +178,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                               child: AutoSizeText(
                                 "Events",
                                 style: TextStyle(
-                                    color: Styles.fontColor,
+                                    color: Styles.textColor,
                                     fontSize: 20,
                                     fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.center,
@@ -219,7 +248,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                               child: AutoSizeText(
                                 "Past Events",
                                 style: TextStyle(
-                                    color: Styles.fontColor,
+                                    color: Styles.textColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 20),
                                 textAlign: TextAlign.center,
@@ -286,7 +315,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                               child: AutoSizeText(
                                 "Send feedback",
                                 style: TextStyle(
-                                    color: Styles.fontColor,
+                                    color: Styles.textColor,
                                     fontWeight: FontWeight.w400,
                                     fontSize: 20),
                                 textAlign: TextAlign.center,
@@ -312,7 +341,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                 child: Align(
                   alignment: Alignment.bottomLeft,
                   child: FloatingActionButton(
-                    backgroundColor: Colors.grey[800],
+                    backgroundColor: Styles.subCardColor,
                     onPressed: () {
                       var googleSignMe = GoogleSignMeIn();
                       googleSignMe.logout();
@@ -322,7 +351,9 @@ class _MenuWidgetState extends State<MenuWidget> {
                 ),
               ),
             ]),
-          )),
-    ));
+          ),
+        ],
+      ),
+    )));
   }
 }

@@ -2,7 +2,7 @@ import 'package:club_calendar/styles.dart';
 import 'package:flutter/material.dart';
 import '../widgets/EventCard.dart';
 import 'event_details.dart';
-import 'MenuWidget.dart';
+import '../widgets/MenuWidget.dart';
 
 class EventList extends StatefulWidget {
   const EventList({Key key}) : super(key: key);

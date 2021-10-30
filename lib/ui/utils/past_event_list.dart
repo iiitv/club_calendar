@@ -1,7 +1,7 @@
 import 'package:club_calendar/styles.dart';
 import 'package:club_calendar/ui/utils/past_event_details.dart';
 import 'package:flutter/material.dart';
-import 'MenuWidget.dart';
+import '../widgets/MenuWidget.dart';
 import '../widgets/EventCard.dart';
 import 'event_list.dart';
 

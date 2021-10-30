@@ -1,7 +1,7 @@
 import 'package:club_calendar/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'MenuWidget.dart';
+import '../widgets/MenuWidget.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
