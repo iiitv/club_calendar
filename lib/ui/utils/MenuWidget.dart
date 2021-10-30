@@ -7,18 +7,13 @@ import '../../styles.dart';
 import '../../util/google_sign_in.dart';
 import 'package:sliding_switch/sliding_switch.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-<<<<<<< HEAD:lib/ui/MenuWidget.dart
-import 'event_list.dart';
-import 'app_feedback_page.dart';
-import 'event_details.dart';
-import 'event_list.dart';
-import 'event_list_page.dart';
-=======
-
-import '../pages/app_feedback_page.dart';
-import 'event_details.dart';
 import '../pages/event_list_page.dart';
->>>>>>> 61cd5ac99555326df304af417ef7719d406325a8:lib/ui/utils/MenuWidget.dart
+import '../pages/app_feedback_page.dart';
+import 'event_list.dart';
+import 'app_feedback.dart';
+import 'event_details.dart';
+import 'event_list.dart';
+import 'event_list.dart';
 
 //Drawer Code
 class MenuWidget extends StatefulWidget {

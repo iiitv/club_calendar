@@ -1,6 +1,6 @@
 import 'package:club_calendar/styles.dart';
-import 'package:club_calendar/ui/MenuWidget.dart';
 import 'package:flutter/material.dart';
+import 'MenuWidget.dart';
 
 class EventCard extends StatefulWidget {
 
