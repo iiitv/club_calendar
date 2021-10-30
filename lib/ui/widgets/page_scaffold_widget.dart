@@ -1,23 +1,25 @@
+import 'package:club_calendar/styles.dart';
 import 'package:flutter/material.dart';
-
-import '../styles.dart';
 import 'MenuWidget.dart';
-import 'event_list.dart';
 
-class EventListPage extends StatefulWidget {
-  const EventListPage({Key key}) : super(key: key);
+class PageScaffold extends StatefulWidget {
+  final Widget body;
+
+  PageScaffold({this.body});
+
 
   @override
-  _EventListPageState createState() => _EventListPageState();
+  _PageScaffoldState createState() => _PageScaffoldState();
 }
 
-class _EventListPageState extends State<EventListPage> {
-  Styles styles =new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
-
+class _PageScaffoldState extends State<PageScaffold> {
   @override
   Widget build(BuildContext context) {
+    final styles=Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black);
+if(lit==true)
+    final styles=Styles(Colors.white,Colors.black,Colors.white60,Colors.white);
     return Scaffold(
-        appBar: AppBar(
+        appBar:AppBar(
 
           backgroundColor: Styles.backgroundColor,
           elevation: 0.0,
@@ -45,9 +47,7 @@ class _EventListPageState extends State<EventListPage> {
 
         ),
         drawer: MenuWidget(),
-        body:EventList()
-
-
+        body: widget.body
     );
   }
 }

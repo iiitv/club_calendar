@@ -1,6 +1,6 @@
 import 'package:club_calendar/styles.dart';
 import 'package:flutter/material.dart';
-import 'EventCard.dart';
+import '../widgets/EventCard.dart';
 import 'event_details.dart';
 import 'MenuWidget.dart';
 

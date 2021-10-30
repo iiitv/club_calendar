@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
-import '../styles.dart';
-import 'dialog_widget.dart';
+import '../../styles.dart';
+import '../utils/dialog_widget.dart';
 
-Widget slider(BuildContext context) {
+Widget sliderPresent(BuildContext context) {
   double deviceHeight = MediaQuery.of(context).size.height,
       deviceWidth = MediaQuery.of(context).size.width;
   Styles styles= new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
@@ -98,65 +98,13 @@ Widget slider(BuildContext context) {
                 leading: styles.leadingListTile('assets/icons/medal.png',
                     radius: 60.0),
 
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '1st Prize',
-                      style:
-                      styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                    ),
-                    Text(
-                      'Rs. 5 k',
-                      style:
-                      styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                    ),
-
-                  ],
-                ),
+                title: Text("NA", style: styles.customStyle(
+                    size: 20.0, color: Styles.detailsColor))
               ),
-              ListTile(
-                leading: styles.leadingListTile('assets/icons/silver_medal.png',
-                    radius: 60.0),
 
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '2nd Prize',
-                      style:
-                      styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                    ),
-                    Text(
-                      'Rs. 3 k',
-                      style:
-                      styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                    ),
 
-                  ],
-                ),
-              ),
-              ListTile(
-                leading: styles.leadingListTile('assets/icons/bronze_medal.png',
-                    radius: 60.0),
 
-                title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '3rd Prize',
-                      style:
-                      styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                    ),
-                    Text(
-                      'Rs. 2 k',
-                      style:
-                      styles.customStyle(size: 20.0, color: Styles.detailsColor),
-                    ),
 
-                  ],
-                ),
-              ),
 
               //************************************************************
               SizedBox(
@@ -165,46 +113,12 @@ Widget slider(BuildContext context) {
 
               //************************************************************
 
-              //Feedback, Rating bar, rate now
+
               ListTile(
                 leading: styles.leadingListTile('assets/icons/feedback1.png'),
-                title: Row(
-
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: RatingBar.builder(
-                        initialRating: 3,
-                        minRating: 0,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemSize: deviceWidth*0.05,
-                        itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                        itemBuilder: (context, _) => Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
-                        unratedColor: Colors.white,
-                        onRatingUpdate: (rating) {
-                          print("Overall Experience : ${rating}");
-                        },
-                      ),
-                    ),
-                    FlatButton(
-                        onPressed:(){
-                          showDialog(
-                              context: context,
-                              builder: (BuildContext context) => DialogScreen()
-                          );
-                        },
-                        child: Center(
-                          child: Text('Rate Now',
-                            style: TextStyle(color: Styles.buttonColor),),
-                        ))
-                  ],
+                title: Text("NA",
+                    style: styles.customStyle(
+                        size: 20.0, color: Styles.detailsColor)
                 ),
 
               ),

@@ -1,9 +1,8 @@
 import 'package:club_calendar/styles.dart';
-import 'package:club_calendar/ui/past_event_details.dart';
+import 'package:club_calendar/ui/utils/past_event_details.dart';
 import 'package:flutter/material.dart';
 import 'package:club_calendar/ui/MenuWidget.dart';
-import 'EventCard.dart';
-import 'event_details.dart';
+import '../widgets/EventCard.dart';
 import 'event_list.dart';
 
 class PastEventList extends StatefulWidget {

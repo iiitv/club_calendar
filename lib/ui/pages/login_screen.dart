@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart' as neu;
 
-import '../styles.dart';
-import '../util/google_sign_in.dart';
+import '../../styles.dart';
+import '../../util/google_sign_in.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = "/loginScreen";

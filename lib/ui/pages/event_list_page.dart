@@ -1,30 +1,22 @@
 import 'package:flutter/material.dart';
 
-import '../styles.dart';
-import 'MenuWidget.dart';
-import 'app_feedback.dart';
+import '../../styles.dart';
+import '../widgets/MenuWidget.dart';
+import '../utils/event_list.dart';
 
-class AppFeedBackPage extends StatefulWidget {
-  const AppFeedBackPage({Key key}) : super(key: key);
-
-  static const routeName = '/appFeedbackPage';
+class EventListPage extends StatefulWidget {
+  const EventListPage({Key key}) : super(key: key);
 
   @override
-  _AppFeedBackPageState createState() => _AppFeedBackPageState();
+  _EventListPageState createState() => _EventListPageState();
 }
 
-class _AppFeedBackPageState extends State<AppFeedBackPage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
+class _EventListPageState extends State<EventListPage> {
+  Styles styles =new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
 
   @override
   Widget build(BuildContext context) {
-    Styles styles = new Styles(Colors.grey.shade800,Colors.white,Colors.black12,Colors.black38);
     return Scaffold(
-
-        backgroundColor: Styles.backgroundColor,
-        key: _scaffoldKey,
-
         appBar: AppBar(
 
           backgroundColor: Styles.backgroundColor,
@@ -53,9 +45,9 @@ class _AppFeedBackPageState extends State<AppFeedBackPage> {
 
         ),
         drawer: MenuWidget(),
-        body:AppFeedback()
+        body:EventList()
+
 
     );
-
   }
 }
