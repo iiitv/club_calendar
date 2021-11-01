@@ -18,7 +18,6 @@ class _EventListPageState extends State<EventListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-
           backgroundColor: Styles.backgroundColor,
           elevation: 0.0,
 
@@ -46,8 +45,6 @@ class _EventListPageState extends State<EventListPage> {
         ),
         drawer: MenuWidget(),
         body:EventList()
-
-
     );
   }
 }

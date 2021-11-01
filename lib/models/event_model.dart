@@ -25,7 +25,7 @@ class EventModel {
       @required this.duration,
       @required this.dateAndTime,
       @required this.venue,
-      @required this.eventType,
+      this.eventType,
       this.speaker,
       this.organisers,
       this.prizes,
