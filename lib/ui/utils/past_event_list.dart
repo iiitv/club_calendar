@@ -16,29 +16,7 @@ class PastEventList extends StatefulWidget {
 class _PastEventListState extends State<PastEventList> {
   @override
   Styles styles = new Styles();
-  List<EventModel> events_list = [
-
-    EventModel(
-      eventName: 'PastEvent 1',
-      duration: 10,
-      dateAndTime: DateTime.now(),
-      venue: 'IIITV',),
-
-    EventModel(
-      eventName: 'PastEvent 2',
-      duration: 10,
-      dateAndTime: DateTime.now(),
-      venue: 'IIITV',),
-
-    EventModel(
-      eventName: 'PastEvent 3',
-      duration: 10,
-      dateAndTime: DateTime.now(),
-      venue: 'IIITV',),
-
-
-  ];
-
+  
   var month_list={
 
     'January' : [
