@@ -85,7 +85,7 @@ class _EventCardState extends State<EventCard> {
             ),
             Padding(
              padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
-              child: Text(widget.duration,
+              child: Text(widget.duration.toString(),
                   style: styles.cardDurationStyle()),
             )
           ],
